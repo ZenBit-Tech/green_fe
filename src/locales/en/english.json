@@ -1,0 +1,29 @@
+{
+  "landing": {
+    "title": "Landing Page",
+    "description": "Counter button:"
+  },
+  "about": {
+    "title": "About Page",
+    "description": "Example of using react-hook-form:"
+  },
+  "button": {
+    "increment": "Increment Counter",
+    "count": "Count: "
+  },
+  "form": {
+    "name": "Name",
+    "email": "Email",
+    "submit": "Submit",
+    "errors": {
+      "nameRequired": "Name is required",
+      "emailRequired": "Email is required",
+      "emailInvalid": "Invalid email address"
+    }
+  },
+  "nav": {
+    "h1": "Ehm...Hello World?",
+    "landing": "Landing",
+    "about": "About"
+  }
+}

@@ -1,0 +1,26 @@
+.btn-container {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  background-color: #007bff;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+
+  &:hover {
+    background-color: #0056b3;
+  }
+}
+
+.btn-count {
+  font-size: 14px;
+  font-weight: 500;
+}
