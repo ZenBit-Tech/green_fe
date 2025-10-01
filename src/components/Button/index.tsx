@@ -1,6 +1,6 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
-import { useButtonHooks } from "./ButtonHooks";
+import { useButtonHooks } from "./buttonHooks";
 import "./styles.scss";
 
 interface ButtonProps {

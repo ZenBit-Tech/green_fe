@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
-import Landing from "./pages/LandingPage/Landing";
-import About from "./pages/ExampleAboutPage/About";
+import Landing from "pages/LandingPage/Landing";
+import About from "pages/ExampleAboutPage/About";
 
 function App() {
   const { t } = useTranslation();
