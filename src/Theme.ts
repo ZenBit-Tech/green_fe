@@ -7,24 +7,43 @@ const FONT_FAMILY = {
 
 const FONT_WEIGHT = {
   BOLD: 700,
+  SEMIBOLD: 600,
+  MEDIUM: 500,
   LIGHT: 300,
 };
 
 const COLORS = {
-  PRIMARY_BUTTON: "#0B1F56",
-  PRIMARY_BUTTON_HOVER: "#6997ED8C",
-  BUTTON_DISABLED: "#878F9E",
+  PRIMARY_DARK: "#0B1F56",
+  PRIMARY_LIGHT: "#6997ED",
   WHITE: "#FFFFFF",
-  TEXT: "#0B1F56",
+  SECONDARY_TEAL: "#4EB9BE",
+  SECONDARY_GRAY: "#878F9E",
+  SECONDARY_BEIGE: "#DBD69D",
+  SECONDARY_GREEN: "#45A76A80",
+  SECONDARY_RED: "#BC000380",
 };
 
 export const theme = createTheme({
   palette: {
     primary: {
-      main: COLORS.PRIMARY_BUTTON,
+      main: COLORS.PRIMARY_DARK,
+      light: COLORS.PRIMARY_LIGHT,
+      contrastText: COLORS.WHITE,
+    },
+    secondary: {
+      main: COLORS.SECONDARY_TEAL,
+      dark: COLORS.SECONDARY_GRAY,
+      light: COLORS.SECONDARY_BEIGE,
+    },
+    text: {
+      primary: COLORS.PRIMARY_DARK,
+      secondary: COLORS.SECONDARY_GRAY,
+    },
+    background: {
+      default: COLORS.WHITE,
     },
     action: {
-      disabledBackground: COLORS.BUTTON_DISABLED,
+      disabledBackground: COLORS.SECONDARY_GRAY,
       disabled: COLORS.WHITE,
     },
   },
@@ -32,10 +51,17 @@ export const theme = createTheme({
     h1: {
       fontFamily: FONT_FAMILY.DM_SANS,
       fontWeight: FONT_WEIGHT.BOLD,
-      fontSize: "48px",
+      fontSize: "64px",
       lineHeight: "70px",
       textAlign: "center",
-      color: COLORS.TEXT,
+      color: COLORS.PRIMARY_DARK,
+    },
+    h2: {
+      fontFamily: FONT_FAMILY.DM_SANS,
+      fontWeight: FONT_WEIGHT.SEMIBOLD,
+      fontSize: "48px",
+      lineHeight: "56px",
+      color: COLORS.PRIMARY_DARK,
     },
     subtitle1: {
       fontFamily: FONT_FAMILY.POPPINS,
@@ -43,13 +69,27 @@ export const theme = createTheme({
       fontSize: "24px",
       lineHeight: "35px",
       textAlign: "center",
-      color: COLORS.TEXT,
+      color: COLORS.PRIMARY_DARK,
+    },
+    subtitle2: {
+      fontFamily: FONT_FAMILY.DM_SANS,
+      fontWeight: FONT_WEIGHT.LIGHT,
+      fontSize: "16px",
+      lineHeight: "35px",
+      textAlign: "center",
+      color: COLORS.PRIMARY_DARK,
     },
     button: {
       fontFamily: FONT_FAMILY.DM_SANS,
-      fontWeight: FONT_WEIGHT.BOLD,
+      fontWeight: FONT_WEIGHT.MEDIUM,
+      fontSize: "20px",
+      lineHeight: "24px",
       textTransform: "none",
-      fontSize: "18px",
     },
   },
+  shape: {
+    borderRadius: 15,
+  },
 });
+
+export default theme;

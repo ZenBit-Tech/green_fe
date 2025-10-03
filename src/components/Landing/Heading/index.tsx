@@ -1,37 +1,58 @@
+import { Button, Link, Typography, Box } from "@mui/material";
 import { useTranslation } from "react-i18next";
 import Logo from "@/components/Logo";
-import "./styles.scss";
+import CheckIcon from "locals/check.svg";
+import {
+  StyledAppBar,
+  StyledToolbar,
+  NavBox,
+  Background,
+  BgTextContainer,
+  Criteria,
+} from "./styles";
 
 function Heading() {
   const { t } = useTranslation();
   return (
     <>
-      <nav>
-        <div className="navContainer">
+      <StyledAppBar position="static">
+        <StyledToolbar>
           <Logo />
-          <div className="navigation">
-            <a href="/use" className="nav-link">
+          <NavBox>
+            <Link href="/use" underline="none" color="text.primary">
               {t("navLanding.use")}
-            </a>
-            <a href="/about" className="nav-link">
+            </Link>
+            <Link href="/about" underline="none" color="text.primary">
               {t("navLanding.about")}
-            </a>
-            <button className="nav-button">{t("navLanding.button")}</button>
-          </div>
-        </div>
-      </nav>
-      <div className="background">
-        <div className="bg-text">
-          <h1>{t("bg.heading")}</h1>
-          <p>{t("bg.text")}</p>
-          <div className="criteria">
-            <span>{t("bg.criteria1")}</span>
-            <span>{t("bg.criteria2")}</span>
-            <span>{t("bg.criteria3")}</span>
-          </div>
-        </div>
+            </Link>
+            <Button variant="contained" color="primary">
+              {t("navLanding.button")}
+            </Button>
+          </NavBox>
+        </StyledToolbar>
+      </StyledAppBar>
+
+      <Background>
+        <BgTextContainer>
+          <Typography variant="h1">{t("bg.heading")}</Typography>
+          <Typography variant="subtitle1">{t("bg.text")}</Typography>
+
+          <Criteria>
+            {[t("bg.criteria1"), t("bg.criteria2"), t("bg.criteria3")].map(
+              (text, i) => (
+                <Box
+                  key={i}
+                  sx={{ display: "flex", alignItems: "center", gap: 1 }}
+                >
+                  <img src={CheckIcon} alt="check" width={20} height={20} />
+                  <Typography variant="subtitle2">{text}</Typography>
+                </Box>
+              ),
+            )}
+          </Criteria>
+        </BgTextContainer>
         <div className="card"></div>
-      </div>
+      </Background>
     </>
   );
 }

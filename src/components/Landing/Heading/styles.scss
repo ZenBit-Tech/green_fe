@@ -1,135 +1,39 @@
-nav {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.appBar {
+  background: transparent;
+  box-shadow: none;
 }
 
-.navContainer {
+.toolbar {
   display: flex;
   justify-content: space-between;
-  align-items: center;
   width: 90%;
+  margin: 0 auto;
 }
 
-.navigation {
+.navBox {
   display: flex;
-  justify-content: space-between;
+  gap: 24px;
   align-items: center;
-  width: 30%;
-}
-
-.nav-link {
-  text-decoration: none;
-  font-family: variables.$font-heading;
-  font-weight: variables.$font-weight-medium;
-  font-size: 20px;
-  line-height: 24px;
-  letter-spacing: 0;
-  vertical-align: middle;
-  color: variables.$color-primary-dark;
-  transition: all 0.2s ease-in-out;
-
-  &:hover {
-    color: variables.$color-primary-light;
-    box-shadow: none;
-  }
-
-  &:active {
-    color: variables.$color-primary-light;
-    box-shadow: 0px 2px 4px 0px variables.$color-primary-dark;
-  }
-
-  &:disabled {
-    color: variables.$color-primary-dark;
-    cursor: not-allowed;
-    opacity: 0.8;
-    box-shadow: none;
-  }
-
-  &:focus {
-    outline: 2px solid variables.$color-primary-light;
-    outline-offset: 2px;
-    box-shadow: none;
-  }
-}
-
-.nav-button {
-  width: 160px;
-  height: 44px;
-  border-radius: 15px;
-  padding: 10px;
-
-  font-family: variables.$font-heading;
-  font-weight: variables.$font-weight-medium;
-  font-size: 20px;
-  line-height: 24px;
-  letter-spacing: 0;
-  vertical-align: middle;
-
-  background-color: variables.$color-primary-dark;
-  color: variables.$color-white;
-  border: none;
-  cursor: pointer;
-  opacity: 1;
-  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-
-  transition: all 0.3s cubic-bezier(0.45, 1.45, 0.8, 1);
-
-  &:hover {
-    background-color: rgba(variables.$color-primary-light, 0.55);
-    box-shadow: none;
-  }
-
-  &:active {
-    background-color: rgba(variables.$color-primary-light, 0.5);
-    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-    transition: all 0.4s ease-in;
-  }
-
-  &:disabled {
-    background-color: variables.$color-secondary-gray;
-    color: variables.$color-white;
-    cursor: not-allowed;
-    box-shadow: none;
-    opacity: 1;
-  }
-
-  &:focus {
-    outline: none;
-    background-color: variables.$color-primary-light;
-    color: variables.$color-white;
-    border: 3px solid variables.$color-primary-light;
-    box-shadow: none;
-  }
 }
 
 .background {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100%;
   height: 604px;
-  background: linear-gradient(
-    99.53deg,
-    variables.$color-white 30%,
-    rgba(variables.$color-primary-light, 0.35) 100%
-  );
+  background: linear-gradient(99.53deg, #ffffff 30%, #6997ed55 100%);
+}
 
-  .bg-text {
-    width: 45%;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-  }
+.bgTextContainer {
+  width: 45%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
 
-  h1 {
-    font-family: variables.$font-heading;
-    font-weight: variables.$font-weight-bold;
-    font-style: Bold;
-    font-size: 64px;
-    line-height: 70px;
-    letter-spacing: 0%;
-    vertical-align: middle;
-    color: variables.$color-primary-dark;
-  }
+.criteria {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 24px;
 }
