@@ -21,9 +21,20 @@
       "emailInvalid": "Invalid email address"
     }
   },
-  "nav": {
-    "h1": "Ehm...Hello World?",
-    "landing": "Landing",
-    "about": "About"
+  "navLanding": {
+    "use": "Use Cases",
+    "about": "About Us",
+    "button": "Get Started"
+  },
+  "logo": {
+    "alt": "Logo",
+    "title": "Lab AI"
+  },
+  "bg": {
+    "heading": "Understand Your Blood Tests with AI",
+    "text": "Get personalized health insights, supplement recommendations, and actionable advice from your blood test results in minutes, not days.",
+    "criteria1": "HIPAA Compliant",
+    "criteria2": "Trusted by 50K+ Users",
+    "criteria3": "Results in 2 Minutes"
   }
 }

@@ -8,7 +8,6 @@ function App() {
   return (
     <>
       <Router>
-        <h1>{t("nav.h1")}</h1>
         <nav>
           <Link to="/">{t("nav.landing")}</Link> |{" "}
           <Link to="/about">{t("nav.about")}</Link>
