@@ -1,4 +1,7 @@
 {
+  "logo": {
+    "title": "Lab AI"
+  },
   "landing": {
     "title": "Landing Page",
     "description": "Counter button:"
@@ -9,7 +12,8 @@
   },
   "button": {
     "increment": "Increment Counter",
-    "count": "Count: "
+    "count": "Count: ",
+    "startAnalysis": "Start Your Analysis Now"
   },
   "form": {
     "name": "Name",
@@ -25,5 +29,23 @@
     "h1": "Ehm...Hello World?",
     "landing": "Landing",
     "about": "About"
+  },
+  "CTA": {
+    "title": "Ready to Take Control of Your Health?",
+    "subtitle": "Join thousands of people who are already using Lab AI to understand their blood tests and improve their health.",
+    "buttonText": "Start Your Analysis Now"
+  },
+  "footer": {
+    "description": "AI-powered blood test analysis that helps you understand your health and make informed decisions about your wellbeing.",
+    "companyTitle": "Company",
+    "supportTitle": "Support",
+    "copyright": "© 2025 Lab AI. All rights reserved. | Made with heart for better health.",
+    "links": {
+      "useCases": "Use Cases",
+      "aboutUs": "About Us",
+      "contactUs": "Contact Us",
+      "privacyPolicy": "Privacy Policy",
+      "termsOfService": "Terms of Service"
+    }
   }
 }

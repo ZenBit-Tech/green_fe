@@ -11,6 +11,7 @@
       "components/*": ["components/*"],
       "locales/*": ["locales/*"],
       "pages/*": ["pages/*"],
+      "constants/*": ["constants/*"],
       "store/*": ["store/*"]
     }
   }
