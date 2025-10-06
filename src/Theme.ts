@@ -1,4 +1,4 @@
-import { createTheme } from "@mui/material/styles";
+import { createTheme, alpha } from "@mui/material/styles";
 
 const FONT_FAMILY = {
   DM_SANS: '"DM Sans", sans-serif',
@@ -74,6 +74,7 @@ export const theme = createTheme({
     subtitle2: {
       fontFamily: FONT_FAMILY.DM_SANS,
       fontWeight: FONT_WEIGHT.LIGHT,
+      letterSpacing: "1%",
       fontSize: "16px",
       lineHeight: "35px",
       textAlign: "center",
@@ -89,6 +90,52 @@ export const theme = createTheme({
   },
   shape: {
     borderRadius: 15,
+  },
+  components: {
+    MuiButton: {
+      styleOverrides: {
+        root: {
+          width: 160,
+          height: 44,
+          padding: "10px",
+          borderRadius: 15,
+          fontFamily: FONT_FAMILY.DM_SANS,
+          fontWeight: FONT_WEIGHT.MEDIUM,
+          fontSize: "20px",
+          lineHeight: "24px",
+          textTransform: "none",
+          color: COLORS.WHITE,
+          backgroundColor: COLORS.PRIMARY_DARK,
+          boxShadow: "0px 4px 4px 0px #00000040",
+          transition: "all 0.3s cubic-bezier(0.45, 1.45, 0.8, 1)",
+
+          "&:hover": {
+            backgroundColor: alpha(COLORS.PRIMARY_LIGHT, 0.55),
+            boxShadow: "none",
+          },
+
+          "&:active": {
+            backgroundColor: alpha(COLORS.PRIMARY_LIGHT, 0.5),
+            boxShadow: "0px 4px 4px 0px #00000040",
+            transition: "all 0.4s ease-in",
+          },
+
+          "&.Mui-focusVisible": {
+            outline: "none",
+            border: `3px solid ${COLORS.PRIMARY_LIGHT}`,
+            boxShadow: "none",
+            color: COLORS.WHITE,
+          },
+
+          "&.Mui-disabled": {
+            backgroundColor: COLORS.SECONDARY_GRAY,
+            color: COLORS.WHITE,
+            boxShadow: "none",
+            opacity: 1,
+          },
+        },
+      },
+    },
   },
 });
 

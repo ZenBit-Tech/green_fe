@@ -1,6 +1,7 @@
-import { Button, Link, Typography, Box } from "@mui/material";
+import { Button, Typography } from "@mui/material";
 import { useTranslation } from "react-i18next";
 import Logo from "@/components/Logo";
+import UploadCard from "@/components/UploadCard";
 import CheckIcon from "locals/check.svg";
 import {
   StyledAppBar,
@@ -8,7 +9,17 @@ import {
   NavBox,
   Background,
   BgTextContainer,
+  LeftHeading,
+  LeftSubtitle,
   Criteria,
+  CriteriaIcon,
+  CriteriaText,
+  CriteriaItem,
+  NavLink,
+  StatContainer,
+  StatBox,
+  Stat,
+  Line,
 } from "./styles";
 
 function Heading() {
@@ -19,12 +30,12 @@ function Heading() {
         <StyledToolbar>
           <Logo />
           <NavBox>
-            <Link href="/use" underline="none" color="text.primary">
+            <NavLink href="/use" underline="none" color="text.primary">
               {t("navLanding.use")}
-            </Link>
-            <Link href="/about" underline="none" color="text.primary">
+            </NavLink>
+            <NavLink href="/about" underline="none" color="text.primary">
               {t("navLanding.about")}
-            </Link>
+            </NavLink>
             <Button variant="contained" color="primary">
               {t("navLanding.button")}
             </Button>
@@ -34,25 +45,54 @@ function Heading() {
 
       <Background>
         <BgTextContainer>
-          <Typography variant="h1">{t("bg.heading")}</Typography>
-          <Typography variant="subtitle1">{t("bg.text")}</Typography>
-
+          <LeftHeading variant="h1">{t("bg.heading")}</LeftHeading>
+          <LeftSubtitle variant="subtitle1">{t("bg.text")}</LeftSubtitle>
           <Criteria>
-            {[t("bg.criteria1"), t("bg.criteria2"), t("bg.criteria3")].map(
-              (text, i) => (
-                <Box
-                  key={i}
-                  sx={{ display: "flex", alignItems: "center", gap: 1 }}
-                >
-                  <img src={CheckIcon} alt="check" width={20} height={20} />
-                  <Typography variant="subtitle2">{text}</Typography>
-                </Box>
-              ),
-            )}
+            <CriteriaItem>
+              <CriteriaIcon src={CheckIcon} alt="check" />
+              <CriteriaText variant="subtitle2">
+                {t("bg.criteria1")}
+              </CriteriaText>
+            </CriteriaItem>
+
+            <CriteriaItem>
+              <CriteriaIcon src={CheckIcon} alt="check" />
+              <CriteriaText variant="subtitle2">
+                {t("bg.criteria2")}
+              </CriteriaText>
+            </CriteriaItem>
+
+            <CriteriaItem>
+              <CriteriaIcon src={CheckIcon} alt="check" />
+              <CriteriaText variant="subtitle2">
+                {t("bg.criteria3")}
+              </CriteriaText>
+            </CriteriaItem>
           </Criteria>
         </BgTextContainer>
-        <div className="card"></div>
+        <UploadCard />
       </Background>
+
+      <StatContainer>
+        <StatBox>
+          <Typography variant="h1">{t("stats.name1")}</Typography>
+          <Stat variant="subtitle1">{t("stats.desc1")}</Stat>
+        </StatBox>
+        <StatBox>
+          <Typography variant="h1">{t("stats.name2")}</Typography>
+          <Stat variant="subtitle1">{t("stats.desc2")}</Stat>
+        </StatBox>
+        <StatBox>
+          <Typography variant="h1">{t("stats.name3")}</Typography>
+          <Stat variant="subtitle1">{t("stats.desc3")}</Stat>
+        </StatBox>
+        <StatBox>
+          <Typography variant="h1">{t("stats.name4")}</Typography>
+          <Stat variant="subtitle1">{t("stats.desc4")}</Stat>
+        </StatBox>
+      </StatContainer>
+
+      <Line />
     </>
   );
 }
