@@ -1,12 +1,11 @@
-import { useTranslation } from "react-i18next";
-import Button from "components/Button";
+import Heading from "@/components/Landing/Heading";
+import Benefits from "@/components/Landing/Benefits";
 
 function LandingPage() {
-  const { t } = useTranslation();
   return (
     <>
-      <h1>{t("landing.description")}</h1>
-      <Button label={t("button.increment")} />
+      <Heading />
+      <Benefits />
     </>
   );
 }

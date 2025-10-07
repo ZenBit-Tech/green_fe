@@ -1,16 +1,4 @@
 {
-  "landing": {
-    "title": "Landing Page",
-    "description": "Counter button:"
-  },
-  "about": {
-    "title": "About Page",
-    "description": "Example of using react-hook-form:"
-  },
-  "button": {
-    "increment": "Increment Counter",
-    "count": "Count: "
-  },
   "form": {
     "name": "Name",
     "email": "Email",
@@ -21,9 +9,49 @@
       "emailInvalid": "Invalid email address"
     }
   },
-  "nav": {
-    "h1": "Ehm...Hello World?",
-    "landing": "Landing",
-    "about": "About"
+  "navLanding": {
+    "use": "Use Cases",
+    "about": "About Us",
+    "button": "Get Started"
+  },
+  "logo": {
+    "alt": "Logo",
+    "title": "Lab AI"
+  },
+  "bg": {
+    "heading": "Understand Your Blood Tests with AI",
+    "text": "Get personalized health insights, supplement recommendations, and actionable advice from your blood test results in minutes, not days.",
+    "criteria1": "HIPAA Compliant",
+    "criteria2": "Trusted by 50K+ Users",
+    "criteria3": "Results in 2 Minutes"
+  },
+  "card": {
+    "preTitle": "Start Your Analysis Now",
+    "title": "Upload Your Blood Test Results",
+    "description": "Upload your blood test report and get personalized health insights. Our analyzer will extract key markers, highlight any concerns, and provide tailored recommendations based on your results.",
+    "drop": "Drop your your document here",
+    "click": "or click to browse files",
+    "supports": "Supports PDF, JPG, PNG files up to 10MB",
+    "button": "Upload"
+  },
+  "stats": {
+    "name1": "50 000+",
+    "desc1": "Tests Analyzed",
+    "name2": "100%",
+    "desc2": "Accuracy Rate",
+    "name3": "3",
+    "desc3": "Minutes Average",
+    "name4": "5.0",
+    "desc4": "User Rating"
+  },
+  "benefits": {
+    "title": "Who Benefits from Lab AI",
+    "description": "Our platform serves diverse healthcare needs across different user groups",
+    "title1": "Health-Conscious Individuals",
+    "title2": "Healthcare Professionals",
+    "title3": "Fitness & Wellness Coaches",
+    "description1": "People who want to proactively monitor their health, understand their biomarkers, and optimize their wellness through data-driven insights.",
+    "description2": "Doctors, nurses, and clinicians who need quick, accurate analysis tools to support patient consultations and treatment decisions.",
+    "description3": "Personal trainers, nutritionists, and wellness coaches who want to provide evidence-based recommendations to their clients."
   }
 }
