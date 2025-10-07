@@ -1,6 +1,6 @@
 import { Button, Typography } from "@mui/material";
 import { useTranslation } from "react-i18next";
-import Logo from "@/components/Logo";
+import { Logo } from "@/components/Logo";
 import UploadCard from "@/components/UploadCard";
 import CheckIcon from "locals/check.svg";
 import {
@@ -21,6 +21,7 @@ import {
   Stat,
   Line,
 } from "./styles";
+import { COMPANY_LINKS } from "@/constants/navigation";
 
 function Heading() {
   const { t } = useTranslation();
@@ -30,12 +31,16 @@ function Heading() {
         <StyledToolbar>
           <Logo />
           <NavBox>
-            <NavLink href="/use" underline="none" color="text.primary">
-              {t("navLanding.use")}
-            </NavLink>
-            <NavLink href="/about" underline="none" color="text.primary">
-              {t("navLanding.about")}
-            </NavLink>
+            {COMPANY_LINKS.map((link) => (
+              <NavLink
+                href={link.path}
+                key={link.key}
+                underline="none"
+                color="text.primary"
+              >
+                {t(link.key)}
+              </NavLink>
+            ))}
             <Button variant="contained" color="primary">
               {t("navLanding.button")}
             </Button>

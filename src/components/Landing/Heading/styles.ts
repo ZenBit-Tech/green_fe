@@ -35,6 +35,7 @@ export const BgTextContainer = styled(Box)({
   flexDirection: "column",
   alignItems: "flex-start",
   textAlign: "left",
+  gap: "20px",
 });
 
 export const LeftHeading = styled(Typography)({

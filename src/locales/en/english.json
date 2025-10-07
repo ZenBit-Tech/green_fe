@@ -47,14 +47,11 @@
       "privacyPolicy": "Privacy Policy",
       "termsOfService": "Terms of Service"
     }
+  },
   "navLanding": {
     "use": "Use Cases",
     "about": "About Us",
     "button": "Get Started"
-  },
-  "logo": {
-    "alt": "Logo",
-    "title": "Lab AI"
   },
   "bg": {
     "heading": "Understand Your Blood Tests with AI",

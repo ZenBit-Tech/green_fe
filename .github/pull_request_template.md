@@ -1,7 +1,6 @@
 ## Describe your changes
 
-- Completed two components for landing page
-- Created Theme.ts to make styling of the project easier
+- fix merge conflicts
 
 ## Issue ticket code (and/or) and link
 
