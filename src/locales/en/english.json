@@ -1,7 +1,4 @@
 {
-  "logo": {
-    "title": "Lab AI"
-  },
   "landing": {
     "title": "Landing Page",
     "description": "Counter button:"
@@ -47,6 +44,7 @@
       "privacyPolicy": "Privacy Policy",
       "termsOfService": "Terms of Service"
     }
+  },
   "navLanding": {
     "use": "Use Cases",
     "about": "About Us",

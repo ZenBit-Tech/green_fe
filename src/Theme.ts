@@ -20,7 +20,7 @@ const COLORS = {
   SECONDARY_GRAY: "#878F9E",
   SECONDARY_BEIGE: "#DBD69D",
   SECONDARY_GREEN: "#45A76A80",
-  SECONDARY_RED: "#BC000380",
+  SECONDARY_RED: "#BC0003",
 };
 
 export const theme = createTheme({
@@ -45,6 +45,9 @@ export const theme = createTheme({
     action: {
       disabledBackground: COLORS.SECONDARY_GRAY,
       disabled: COLORS.WHITE,
+    },
+    error: {
+      main: COLORS.SECONDARY_RED,
     },
   },
   typography: {
@@ -106,7 +109,7 @@ export const theme = createTheme({
           textTransform: "none",
           color: COLORS.WHITE,
           backgroundColor: COLORS.PRIMARY_DARK,
-          boxShadow: "0px 4px 4px 0px #00000040",
+          boxShadow: `0px 4px 4px ${alpha(COLORS.PRIMARY_DARK, 0.25)}`,
           transition: "all 0.3s cubic-bezier(0.45, 1.45, 0.8, 1)",
 
           "&:hover": {
@@ -116,7 +119,7 @@ export const theme = createTheme({
 
           "&:active": {
             backgroundColor: alpha(COLORS.PRIMARY_LIGHT, 0.5),
-            boxShadow: "0px 4px 4px 0px #00000040",
+            boxShadow: `0px 4px 4px ${alpha(COLORS.PRIMARY_DARK, 0.25)}`,
             transition: "all 0.4s ease-in",
           },
 
