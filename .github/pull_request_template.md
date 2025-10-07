@@ -22,7 +22,7 @@
 - [ ] Compare only with constants not with strings
 - [ ] No ternary operator inside the ternary operator
 - [ ] Don't have commented code
-- [ ] no links in the code, env links should be in env file (for example: server url), constant links (for example default avatar URL) should be in constant file.
+- [ ] no links in the code, env links should be in env file (for example: server ur l), constant links (for example default avatar URL) should be in constant file.
 - [ ] Used camelCase for variables and functions
 - [ ] Date and time formats are on the constants
 - [ ] Functions are public only if it's used outside the class

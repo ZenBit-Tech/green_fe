@@ -10,9 +10,17 @@ export default defineConfig({
       "@": path.resolve(__dirname, "src"),
       components: path.resolve(__dirname, "src/components"),
       locales: path.resolve(__dirname, "src/locales"),
+      locals: path.resolve(__dirname, "src/locals"),
       pages: path.resolve(__dirname, "src/pages"),
       constants: path.resolve(__dirname, "src/constants"),
       store: path.resolve(__dirname, "src/store"),
+    },
+  },
+  css: {
+    preprocessorOptions: {
+      scss: {
+        additionalData: `@use "@/globalStyles/variables.scss";`,
+      },
     },
   },
 });

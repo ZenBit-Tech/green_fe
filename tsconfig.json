@@ -10,6 +10,7 @@
       "@/*": ["*"],
       "components/*": ["components/*"],
       "locales/*": ["locales/*"],
+      "locals/*": ["locals/*"],
       "pages/*": ["pages/*"],
       "constants/*": ["constants/*"],
       "store/*": ["store/*"]
