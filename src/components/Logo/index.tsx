@@ -1,17 +1,16 @@
 import { useTranslation } from "react-i18next";
-import logo from "locals/logo.svg";
-import "./styles.scss";
+import logo from "locales/logo.svg";
+import { Box, Typography } from "@mui/material";
 
-function Logo() {
+export const Logo = () => {
   const { t } = useTranslation();
-  return (
-    <>
-      <div className="logoDiv">
-        <img src={logo} alt={t("logo.alt")} />
-        <span>{t("logo.title")}</span>
-      </div>
-    </>
-  );
-}
 
-export default Logo;
+  return (
+    <Box sx={{ display: "flex", alignItems: "center", gap: "15px" }}>
+      <Box component="img" src={logo} alt={t("logo.alt")} />
+      <Typography variant="h3" color="primary.contrastText">
+        {t("logo.title")}
+      </Typography>
+    </Box>
+  );
+};

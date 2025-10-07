@@ -1,12 +1,11 @@
 ## Describe your changes
 
-- Completed three components for landing page
+- Completed two components for landing page
 - Created Theme.ts to make styling of the project easier
-- Deleted unused code and placeholders
 
 ## Issue ticket code (and/or) and link
 
-- [https://lizbethwangari2018.atlassian.net/browse/ALRAP-42]
+- [Link to JIRA ticket](https://lizbethwangari2018.atlassian.net/browse/ALRAP-42)
 
 ### **General**
 
@@ -16,6 +15,7 @@
 - [ ] Updated the documentation
 - [ ] Performed a self-review of my code
 - [ ] Types for input and output parameters
+- [ ] Imports should come in a specific order: node modules, absolute path, relative path
 - [ ] Don't have "any" on my code
 - [ ] Used the try/catch pattern for error handling
 - [ ] Don't have magic numbers
