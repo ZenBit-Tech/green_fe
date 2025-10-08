@@ -16,12 +16,12 @@ export const Upload = styled(Card)(({ theme }) => ({
 
 export const UploadContainer = styled(Box)({
   height: "88%",
+  width: "88%",
   display: "flex",
   flexDirection: "column",
   justifySelf: "center",
   justifyContent: "space-between",
   alignItems: "flex-start",
-  width: "88%",
 });
 
 export const PreTitleBox = styled(Box)({
@@ -36,20 +36,20 @@ export const PreTitle = styled(Typography)({
   marginLeft: "1%",
 });
 
-export const Title = styled(Typography)({
-  fontSize: "24px",
-  lineHeight: "35px",
+export const Title = styled(Typography)(({ theme }) => ({
+  fontSize: theme.typography.subtitle1.fontSize,
+  lineHeight: theme.typography.subtitle1.lineHeight,
   letterSpacing: "1%",
   marginLeft: "5%",
-});
+}));
 
-export const Description = styled(Typography)({
-  fontSize: "16px",
+export const Description = styled(Typography)(({ theme }) => ({
+  fontSize: theme.typography.subtitle2.fontSize,
   lineHeight: "20px",
   letterSpacing: "1%",
   marginLeft: "5%",
   textAlign: "left",
-});
+}));
 
 export const UploadBox = styled(Box)(({ theme }) => ({
   width: "100%",
@@ -89,15 +89,15 @@ export const SupportsText = styled(Typography)(({ theme }) => ({
 }));
 
 export const UploadButton = styled(Button)(({ theme }) => ({
-  width: 151,
-  height: 34,
+  width: "32%",
+  minHeight: "34px",
   padding: "10px",
   justifySelf: "flex-end",
   alignSelf: "center",
   borderRadius: theme.shape.borderRadius,
   backgroundColor: theme.palette.primary.main,
   color: theme.palette.primary.contrastText,
-  boxShadow: "0px 4px 4px 0px #00000040",
+  boxShadow: `0px 4px 4px ${alpha(theme.palette.primary.main, 0.25)}`,
   opacity: 1,
   textTransform: "none",
   fontFamily: theme.typography.button.fontFamily,
@@ -108,12 +108,12 @@ export const UploadButton = styled(Button)(({ theme }) => ({
 
   "&:not(:disabled)": {
     backgroundColor: theme.palette.primary.main,
-    boxShadow: "0px 4px 4px 0px #00000040",
+    boxShadow: `0px 4px 4px ${alpha(theme.palette.primary.main, 0.25)}`,
   },
 
   "&:active": {
     backgroundColor: alpha(theme.palette.primary.light, 0.55),
-    boxShadow: "0px 4px 4px 0px #00000040",
+    boxShadow: `0px 4px 4px ${alpha(theme.palette.primary.main, 0.25)}`,
     transition: "all 0.4s ease-out",
   },
 
@@ -138,7 +138,7 @@ export const UploadButton = styled(Button)(({ theme }) => ({
   "&.error": {
     backgroundColor: theme.palette.primary.main,
     border: `1px solid ${theme.palette.secondary.main}`,
-    borderColor: "#BC0003",
+    borderColor: theme.palette.error.main,
     boxShadow: "none",
   },
 }));

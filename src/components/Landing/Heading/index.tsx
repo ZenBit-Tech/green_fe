@@ -1,6 +1,6 @@
 import { Button, Typography } from "@mui/material";
 import { useTranslation } from "react-i18next";
-import Logo from "@/components/Logo";
+import { Logo } from "@/components/Logo";
 import UploadCard from "@/components/UploadCard";
 import CheckIcon from "locals/check.svg";
 import {

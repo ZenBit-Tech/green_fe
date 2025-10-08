@@ -1,11 +1,10 @@
 ## Describe your changes
 
-- Completed two components for landing page
-- Created Theme.ts to make styling of the project easier
+Description of the changes
 
 ## Issue ticket code (and/or) and link
 
-- [Link to JIRA ticket](https://lizbethwangari2018.atlassian.net/browse/ALRAP-42)
+- [Link to JIRA ticket](#link here)
 
 ### **General**
 
