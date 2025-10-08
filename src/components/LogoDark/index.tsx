@@ -1,13 +1,13 @@
 import { useTranslation } from "react-i18next";
-import logo from "locals/logo.svg";
+import logoDark from "locals/logoDark.svg";
 import { LogoContainer, LogoImage, LogoText } from "./styles";
 
-export const Logo = () => {
+export const LogoDark = () => {
   const { t } = useTranslation();
 
   return (
     <LogoContainer>
-      <LogoImage src={logo} alt={t("logo.alt")} />
+      <LogoImage src={logoDark} alt={t("logo.alt")} />
       <LogoText variant="h3" color="primary.contrastText">
         {t("logo.title")}
       </LogoText>
