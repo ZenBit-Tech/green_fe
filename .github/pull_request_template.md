@@ -1,11 +1,10 @@
 ## Describe your changes
 
-- fixed bugs from branch merging
-- fixed code lines which didnt follow FE checklist rules
+Description of the changes
 
 ## Issue ticket code (and/or) and link
 
-- [Link to JIRA ticket](https://lizbethwangari2018.atlassian.net/browse/ALRAP-42)
+- [Link to JIRA ticket](#link here)
 
 ### **General**
 
