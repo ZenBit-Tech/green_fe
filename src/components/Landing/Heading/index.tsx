@@ -1,7 +1,8 @@
 import { Button, Typography } from "@mui/material";
 import { useTranslation } from "react-i18next";
-import { Logo } from "@/components/Logo";
+import { LogoDark } from "@/components/LogoDark";
 import UploadCard from "@/components/UploadCard";
+import { COMPANY_LINKS } from "@/constants/navigation";
 import CheckIcon from "locals/check.svg";
 import {
   StyledAppBar,
@@ -28,14 +29,18 @@ function Heading() {
     <>
       <StyledAppBar position="static">
         <StyledToolbar>
-          <Logo />
+          <LogoDark />
           <NavBox>
-            <NavLink href="/use" underline="none" color="text.primary">
-              {t("navLanding.use")}
-            </NavLink>
-            <NavLink href="/about" underline="none" color="text.primary">
-              {t("navLanding.about")}
-            </NavLink>
+            {COMPANY_LINKS.map((link) => (
+              <NavLink
+                href={link.path}
+                key={link.key}
+                underline="none"
+                color="text.primary"
+              >
+                {t(link.key)}
+              </NavLink>
+            ))}
             <Button variant="contained" color="primary">
               {t("navLanding.button")}
             </Button>

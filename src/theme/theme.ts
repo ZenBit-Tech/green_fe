@@ -126,6 +126,8 @@ export const theme = createTheme({
     MuiButton: {
       styleOverrides: {
         root: {
+          minWidth: "160px",
+          minHeight: "44px",
           padding: "10px",
           borderRadius: 15,
           fontFamily: FONT_FAMILY.DM_SANS,
