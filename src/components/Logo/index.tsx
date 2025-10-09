@@ -1,6 +1,6 @@
 import { useTranslation } from "react-i18next";
-import logo from "locales/logo.svg";
 import { Box, Typography } from "@mui/material";
+import logo from "locals/logo.svg";
 
 export const Logo = () => {
   const { t } = useTranslation();
