@@ -1,7 +1,8 @@
 {
   "logo": {
     "title": "Lab AI",
-    "subtitle": "AI-powered blood test analysis and health insights"
+    "subtitle": "AI-powered blood test analysis and health insights",
+    "alt": "Logo"
   },
   "landing": {
     "title": "Landing Page",
@@ -107,5 +108,19 @@
     "errorInvalidEmail": "Invalid email format. Please enter the correct email.",
     "errorFromServer": "An error occurred: {{message}}",
     "errorNetwork": "Please check your connection and try again."
+  },
+  "aboutSection": {
+    "title": "About Lab AI",
+    "description": "We're on a mission to democratize healthcare by making blood test analysis accessible, understandable, and actionable for everyone",
+    "caption": "Our Story",
+    "text": "Founded in 2023 by a team of healthcare professionals, data scientists, and AI researchers, PlasmAI was born from a simple observation: most people struggle to understand their blood test results. We saw patients leaving doctor's offices with complex lab reports, feeling confused and uncertain about their health status. Traditional healthcare systems often lack the time to provide detailed explanations, leaving patients to navigate their health journey alone. \nOur AI-powered platform bridges this gap, transforming complex medical data into clear, actionable insights that empower individuals to take control of their health.",
+    "name1": "Our Mission",
+    "name2": "Privacy First",
+    "name3": "Scientific Accuracy",
+    "name4": "Accessibility",
+    "text1": "To make healthcare more accessible and understandable by providing AI-powered insights that help people make informed decisions about their health and wellbeing.",
+    "text2": "Your health data is sacred. We use enterprise-grade encryption and never share your personal information with third parties.",
+    "text3": "Our AI models are trained on peer-reviewed medical literature and validated by healthcare professionals to ensure accuracy.",
+    "text4": "Healthcare insights shouldn't be limited by geography or economics. We're making advanced health analysis available to everyone."
   }
 }

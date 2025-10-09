@@ -7,6 +7,7 @@ import {
   Paper,
   alpha,
   Typography,
+  Divider,
 } from "@mui/material";
 
 export const PageWrapper = styled(Box)({
@@ -21,6 +22,23 @@ export const PageWrapper = styled(Box)({
     "linear-gradient(100.41deg, rgba(255, 255, 255, 0.09) 0%, rgba(105, 151, 237, 0.3) 100%)",
 });
 
+export const Subtitle = styled(Typography)(({ theme }) => ({
+  fontFamily: theme.typography.subtitle1.fontFamily,
+  fontWeight: theme.typography.subtitle1.fontWeight,
+  fontSize: theme.typography.body1.fontSize,
+  lineHeight: theme.typography.subtitle1.lineHeight,
+  letterSpacing: 0,
+  color: theme.palette.text.primary,
+}));
+
+export const DividerPage = styled(Divider)(({ theme }) => ({
+  marginTop: "20px",
+  marginBottom: "40px",
+  borderColor: theme.palette.primary.main,
+  opacity: 0.1,
+  width: "650px",
+}));
+
 export const FormContainer = styled(Paper)({
   display: "flex",
   flexDirection: "column",
@@ -32,6 +50,24 @@ export const FormContainer = styled(Paper)({
   boxShadow: "0px 4px 4px 0px #0B1F5640",
   backgroundColor: "rgba(255, 255, 255, 0.8)",
 });
+
+export const FormTitle = styled(Typography)(({ theme }) => ({
+  fontFamily: theme.typography.h1.fontFamily,
+  fontWeight: theme.typography.h1.fontWeight,
+  fontSize: theme.typography.body2.fontSize,
+  lineHeight: theme.typography.h1.lineHeight,
+  letterSpacing: 0,
+  color: theme.palette.text.primary,
+}));
+
+export const FormSubtitle = styled(Typography)(({ theme }) => ({
+  fontFamily: theme.typography.subtitle1.fontFamily,
+  fontWeight: theme.typography.subtitle1.fontWeight,
+  fontSize: theme.typography.subtitle2.fontSize,
+  lineHeight: theme.typography.subtitle1.lineHeight,
+  letterSpacing: 0,
+  color: theme.palette.text.primary,
+}));
 
 export const SocialButtonContainer = styled(Box)({
   width: "344px",
@@ -76,6 +112,13 @@ export const SocialButton = styled(Button)(({ theme }) => ({
     boxShadow: "none",
   },
 }));
+
+export const InputContainer = styled(Box)({
+  width: "344px",
+  display: "flex",
+  alignItems: "start",
+  flexDirection: "column",
+});
 
 export const EmailInput = styled(TextField)(({ theme }) => ({
   width: "100%",
@@ -139,7 +182,7 @@ export const ErrorContainer = styled(Box)({
   gap: "4px",
 });
 
-export const Divider = styled(Box)(({ theme }) => ({
+export const DividerForm = styled(Box)(({ theme }) => ({
   width: "344px",
   display: "flex",
   alignItems: "center",

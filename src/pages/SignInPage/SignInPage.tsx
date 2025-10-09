@@ -1,21 +1,25 @@
 import { Typography, Box, Alert, Button } from "@mui/material";
 import { useTranslation } from "react-i18next";
 import { useSignInForm } from "hooks/useSignInForm";
-import { Logo } from "components/Logo";
+import { PATHS } from "constants/navigation";
+import { LogoDark } from "@/components/LogoDark";
 import {
   PageWrapper,
   FormContainer,
   SocialButton,
   EmailInput,
-  Divider,
+  DividerForm,
   LegalLink,
   SocialButtonContainer,
   LabelMail,
+  Subtitle,
+  FormTitle,
+  FormSubtitle,
+  DividerPage,
 } from "./styles";
-import { PATHS } from "constants/navigation";
-import FacebookRoundedIcon from "@mui/icons-material/FacebookRounded";
-import GoogleIcon from "@mui/icons-material/Google";
-import ErrorOutlineRoundedIcon from "@mui/icons-material/ErrorOutlineRounded";
+import google from "locals/google.svg";
+import facebook from "locals/facebook.svg";
+import errorIcon from "locals/error.svg";
 
 export const SignInPage = () => {
   const { t } = useTranslation();
@@ -30,34 +34,28 @@ export const SignInPage = () => {
 
   return (
     <PageWrapper>
-      <Logo />
-      <Typography sx={{ mt: 1, color: "text.primary" }}>
-        {t("logo.subtitle")}
-      </Typography>
-
-      <FormContainer sx={{ mt: 4 }}>
-        <Typography variant="h3" fontSize={"32px"} lineHeight={"70px"}>
-          {t("signIn.title")}
-        </Typography>
-        <Typography variant="subtitle1" lineHeight={"35px"} fontSize={"16px"}>
-          {t("signIn.subtitle")}
-        </Typography>
+      <LogoDark />
+      <Subtitle>{t("logo.subtitle")}</Subtitle>
+      <DividerPage />
+      <FormContainer>
+        <FormTitle>{t("signIn.title")}</FormTitle>
+        <FormSubtitle>{t("signIn.subtitle")}</FormSubtitle>
 
         <SocialButtonContainer>
-          <SocialButton startIcon={<GoogleIcon />}>
+          <SocialButton startIcon={<img src={google} alt="Google" />}>
             {t("signIn.google")}
           </SocialButton>
-          <SocialButton startIcon={<FacebookRoundedIcon />}>
+          <SocialButton startIcon={<img src={facebook} alt="Facebook" />}>
             {t("signIn.facebook")}
           </SocialButton>
         </SocialButtonContainer>
 
-        <Divider>{t("signIn.divider")}</Divider>
+        <DividerForm>{t("signIn.divider")}</DividerForm>
 
         {isSuccess ? (
           <Alert severity="success">{t("signIn.emailSentSuccess")}</Alert>
         ) : (
-          <Box component="form" onSubmit={handleSubmit} sx={{ width: "344px" }}>
+          <Box component="form" onSubmit={handleSubmit}>
             <LabelMail>{t("signIn.emailLabel")}</LabelMail>
             <EmailInput
               id="email-input"
@@ -68,7 +66,7 @@ export const SignInPage = () => {
               helperText={
                 error ? (
                   <>
-                    <ErrorOutlineRoundedIcon fontSize="small" />{" "}
+                    <img src={errorIcon} alt="Error" />
                     {t(error.key, error.params)}
                   </>
                 ) : (

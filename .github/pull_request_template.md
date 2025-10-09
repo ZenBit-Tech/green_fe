@@ -1,5 +1,7 @@
 ## Describe your changes
 
+Description of the changes
+
 ## Issue ticket code (and/or) and link
 
 - [Link to JIRA ticket](#link here)
