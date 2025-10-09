@@ -1,4 +1,5 @@
 import { useTranslation } from "react-i18next";
+import { useSignInForm } from "@/hooks/useSignInForm";
 import heart from "locals/heart.svg";
 import download from "locals/download.svg";
 import {
@@ -17,6 +18,8 @@ import {
 
 function UploadCard() {
   const { t } = useTranslation();
+  const { handleButtonSignIn } = useSignInForm();
+
   return (
     <>
       <Upload>
@@ -35,7 +38,11 @@ function UploadCard() {
               {t("card.supports")}
             </SupportsText>
           </UploadBox>
-          <UploadButton variant="contained" color="primary">
+          <UploadButton
+            variant="contained"
+            color="primary"
+            onClick={handleButtonSignIn}
+          >
             {t("card.button")}
           </UploadButton>
         </UploadContainer>
