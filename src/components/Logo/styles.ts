@@ -15,8 +15,12 @@ export const LogoImage = styled("img")({
   display: "block",
 });
 
-export const LogoText = styled(Typography)(({ theme }) => ({
-  color: theme.palette.primary.contrastText,
+export const LogoText = styled(Typography, {
+  shouldForwardProp: (prop) => prop !== "$light",
+})<{ $light?: boolean }>(({ theme, $light }) => ({
+  color: $light
+    ? theme.palette.primary.contrastText
+    : theme.palette.primary.main,
   fontFamily: theme.typography.h3.fontFamily,
   fontWeight: theme.typography.h3.fontWeight,
   fontSize: theme.typography.h3.fontSize,

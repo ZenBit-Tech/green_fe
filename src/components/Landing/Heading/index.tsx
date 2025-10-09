@@ -1,6 +1,6 @@
 import { Button, Typography } from "@mui/material";
 import { useTranslation } from "react-i18next";
-import { LogoDark } from "@/components/LogoDark";
+import { Logo } from "@/components/Logo";
 import UploadCard from "@/components/UploadCard";
 import { COMPANY_LINKS } from "@/constants/navigation";
 import CheckIcon from "locals/check.svg";
@@ -29,7 +29,7 @@ function Heading() {
     <>
       <StyledAppBar position="static">
         <StyledToolbar>
-          <LogoDark />
+          <Logo />
           <NavBox>
             {COMPANY_LINKS.map((link) => (
               <NavLink
