@@ -2,7 +2,7 @@ import { Box, Button } from "@mui/material";
 import { useTranslation } from "react-i18next";
 import { useSignInForm } from "hooks/useSignInForm";
 import { PATHS } from "constants/navigation";
-import { LogoDark } from "@/components/LogoDark";
+import { Logo } from "@/components/Logo";
 import {
   PageWrapper,
   FormContainer,
@@ -30,7 +30,7 @@ export const SignInPage = () => {
 
   return (
     <PageWrapper>
-      <LogoDark />
+      <Logo variant="hero" />
       <Subtitle>{t("logo.subtitle")}</Subtitle>
       <DividerPage />
       <FormContainer>

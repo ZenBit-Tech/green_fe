@@ -1,7 +1,7 @@
 import { useTranslation } from "react-i18next";
 import { Box, Grid, Typography } from "@mui/material";
 import { COMPANY_LINKS, SUPPORT_LINKS } from "constants/navigation";
-import { Logo } from "../Logo";
+import { Logo } from "components/Logo";
 import {
   FooterWrapper,
   Description,
@@ -16,7 +16,7 @@ export const Footer = () => {
     <FooterWrapper>
       <Grid container spacing={5}>
         <Grid size={6}>
-          <Logo />
+          <Logo light />
           <Description variant="body1">{t("footer.description")}</Description>
         </Grid>
 
