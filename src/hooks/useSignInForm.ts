@@ -1,80 +1,50 @@
-import { useState, useCallback } from "react";
+import * as z from "zod";
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { useTranslation } from "react-i18next";
+import { useRequestMagicLinkMutation } from "store/api/apiSlice";
 
-const MAGIC_LINK_ENDPOINT = `${import.meta.env.VITE_API_BASE_URL}/auth/magic-link/request`;
+const signInSchema = z.object({
+  email: z.email({ message: "signIn.errorInvalidEmail" }),
+});
 
-const validateEmail = (email: string): boolean => {
-  const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  return re.test(String(email).toLowerCase());
-};
+type SignInFormData = z.infer<typeof signInSchema>;
 
 export const useSignInForm = () => {
-  const [email, setEmail] = useState<string>("");
-  const [error, setError] = useState<{
-    key: string;
-    params?: { message: string };
-  } | null>(null);
-  const [isLoading, setIsLoading] = useState<boolean>(false);
-  const [isSuccess, setIsSuccess] = useState<boolean>(false);
+  const { t } = useTranslation();
 
-  const handleEmailChange = useCallback(
-    (e: React.ChangeEvent<HTMLInputElement>) => {
-      setEmail(e.target.value);
-      if (error) setError(null);
-    },
-    [error],
-  );
+  const [requestMagicLink, { isLoading, isSuccess }] =
+    useRequestMagicLinkMutation();
 
-  const handleSubmit = useCallback(
-    async (e: React.FormEvent) => {
-      e.preventDefault();
-      setIsSuccess(false);
+  const {
+    register,
+    handleSubmit,
+    setError,
+    formState: { errors },
+  } = useForm<SignInFormData>({
+    resolver: zodResolver(signInSchema),
+  });
 
-      if (!validateEmail(email)) {
-        setError({ key: "signIn.errorInvalidEmail" });
-        return;
+  const onSubmit = async (data: SignInFormData) => {
+    try {
+      await requestMagicLink({ email: data.email }).unwrap();
+    } catch (err: unknown) {
+      let errorMessage = "An unknown error occurred";
+      if (err && typeof err === "object" && "data" in err) {
+        errorMessage = (err as { data?: string }).data || errorMessage;
       }
-
-      setIsLoading(true);
-      setError(null);
-
-      try {
-        const response = await fetch(MAGIC_LINK_ENDPOINT, {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({ email }),
-        });
-
-        if (!response.ok) {
-          const errorMessage = await response.text();
-          setError({
-            key: "signIn.errorFromServer",
-            params: { message: errorMessage },
-          });
-          return;
-        }
-
-        const data = await response.json();
-        if (data.success === true) {
-          setIsSuccess(true);
-        }
-      } catch (error) {
-        console.error("Network error:", error);
-        setError({ key: "signIn.errorNetwork" });
-      } finally {
-        setIsLoading(false);
-      }
-    },
-    [email],
-  );
+      setError("email", {
+        type: "server",
+        message: t("signIn.errorFromServer", { message: errorMessage }),
+      });
+    }
+  };
 
   return {
-    email,
-    error,
+    register,
+    handleSubmit: handleSubmit(onSubmit),
+    errors,
     isLoading,
     isSuccess,
-    handleEmailChange,
-    handleSubmit,
   };
 };

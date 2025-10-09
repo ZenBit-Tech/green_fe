@@ -1,4 +1,4 @@
-import { Typography, Box, Alert, Button } from "@mui/material";
+import { Box, Button } from "@mui/material";
 import { useTranslation } from "react-i18next";
 import { useSignInForm } from "hooks/useSignInForm";
 import { PATHS } from "constants/navigation";
@@ -16,6 +16,8 @@ import {
   FormTitle,
   FormSubtitle,
   DividerPage,
+  InputContainer,
+  FormAlert,
 } from "./styles";
 import google from "locals/google.svg";
 import facebook from "locals/facebook.svg";
@@ -23,14 +25,8 @@ import errorIcon from "locals/error.svg";
 
 export const SignInPage = () => {
   const { t } = useTranslation();
-  const {
-    email,
-    error,
-    isLoading,
-    isSuccess,
-    handleEmailChange,
-    handleSubmit,
-  } = useSignInForm();
+  const { register, handleSubmit, errors, isLoading, isSuccess } =
+    useSignInForm();
 
   return (
     <PageWrapper>
@@ -53,47 +49,49 @@ export const SignInPage = () => {
         <DividerForm>{t("signIn.divider")}</DividerForm>
 
         {isSuccess ? (
-          <Alert severity="success">{t("signIn.emailSentSuccess")}</Alert>
+          <FormAlert severity="success">
+            {t("signIn.emailSentSuccess")}
+          </FormAlert>
         ) : (
-          <Box component="form" onSubmit={handleSubmit}>
-            <LabelMail>{t("signIn.emailLabel")}</LabelMail>
-            <EmailInput
-              id="email-input"
-              value={email}
-              onChange={handleEmailChange}
-              placeholder={t("signIn.emailPlaceholder")}
-              error={!!error}
-              helperText={
-                error ? (
-                  <>
-                    <img src={errorIcon} alt="Error" />
-                    {t(error.key, error.params)}
-                  </>
-                ) : (
-                  " "
-                )
-              }
-              disabled={isLoading}
-              fullWidth
-            />
-            <Button
-              type="submit"
-              variant="contained"
-              fullWidth
-              disabled={isLoading}
-              sx={{ mt: 1, py: 1.5 }}
-            >
-              {t("signIn.button")}
-            </Button>
-          </Box>
+          <InputContainer>
+            <Box component="form" onSubmit={handleSubmit} noValidate>
+              <LabelMail>{t("signIn.emailLabel")}</LabelMail>
+              <EmailInput
+                id="email-input"
+                placeholder={t("signIn.emailPlaceholder")}
+                {...register("email")}
+                error={!!errors.email}
+                helperText={
+                  errors.email ? (
+                    <>
+                      <img src={errorIcon} alt="Error" />
+                      {t(errors.email.message as string)}
+                    </>
+                  ) : (
+                    " "
+                  )
+                }
+                disabled={isLoading}
+                fullWidth
+              />
+              <Button
+                type="submit"
+                variant="contained"
+                fullWidth
+                disabled={isLoading}
+              >
+                {t("signIn.button")}
+              </Button>
+            </Box>
+          </InputContainer>
         )}
 
-        <Typography variant="subtitle1" fontSize={"16px"} mt={7}>
+        <FormSubtitle>
           {t("signIn.legal")}
           <LegalLink href={PATHS.DEFAULT}>{t("signIn.terms")}</LegalLink>
           {t("signIn.and")}
           <LegalLink href={PATHS.DEFAULT}>{t("signIn.privacy")}</LegalLink>
-        </Typography>
+        </FormSubtitle>
       </FormContainer>
     </PageWrapper>
   );

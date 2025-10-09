@@ -8,6 +8,7 @@ import {
   alpha,
   Typography,
   Divider,
+  Alert,
 } from "@mui/material";
 
 export const PageWrapper = styled(Box)({
@@ -15,7 +16,8 @@ export const PageWrapper = styled(Box)({
   flexDirection: "column",
   alignItems: "center",
   justifyContent: "center",
-  minHeight: "100vh",
+  maxHeight: "100vh",
+  height: "100vh",
   paddingTop: "54px",
   paddingBottom: "79px",
   background:
@@ -87,10 +89,10 @@ export const SocialButton = styled(Button)(({ theme }) => ({
   justifyContent: "center",
   backgroundColor: "transparent",
   boxShadow: "none",
-  fontSize: "16px",
-  fontFamily: "DM Sans, sans-serif",
+  fontSize: theme.typography.subtitle2.fontSize,
+  fontFamily: theme.typography.body1.fontFamily,
   fontWeight: 400,
-  lineHeight: "35px",
+  lineHeight: theme.typography.subtitle2.lineHeight,
   padding: "0",
 
   "&:hover": {
@@ -115,35 +117,22 @@ export const SocialButton = styled(Button)(({ theme }) => ({
 
 export const InputContainer = styled(Box)({
   width: "344px",
-  display: "flex",
-  alignItems: "start",
-  flexDirection: "column",
+  marginBottom: "60px",
 });
 
 export const EmailInput = styled(TextField)(({ theme }) => ({
   width: "100%",
-  padding: "0 !important",
+  padding: "0 ",
+  marginBottom: "20px",
   input: {
     "&::placeholder": {
-      textOverflow: "ellipsis !important",
       color: alpha(theme.palette.primary.main, 0.9),
-      fontSize: "16px",
-      fontFamily: "DM Sans, sans-serif",
+      fontSize: theme.typography.subtitle2.fontSize,
+      fontFamily: theme.typography.subtitle2.fontFamily,
       fontWeight: 400,
-      lineHeight: "35px",
+      lineHeight: theme.typography.subtitle2.lineHeight,
       margin: "0",
     },
-  },
-  ".css-op1xpl-MuiFormHelperText-root.Mui-error": {
-    margin: 0,
-    color: "#BC0003",
-    display: "flex",
-    alignItems: "center",
-    fontFamily: "DM Sans, sans-serif",
-    fontWeight: 400,
-    fontSize: "12px",
-    lineHeight: "35px",
-    gap: "4px",
   },
 
   ".css-16wblaj-MuiInputBase-input-MuiOutlinedInput-input": {
@@ -171,16 +160,16 @@ export const EmailInput = styled(TextField)(({ theme }) => ({
   },
 }));
 
-export const ErrorContainer = styled(Box)({
+export const FormAlert = styled(Alert)(({ theme }) => ({
   display: "flex",
   alignItems: "center",
-  fontFamily: "DM Sans, sans-serif",
-  fontWeight: 400,
-  fontSize: "12px",
-  lineHeight: "35px",
-  margin: "0",
-  gap: "4px",
-});
+  justifyContent: "center",
+  fontFamily: theme.typography.h1.fontFamily,
+  fontWeight: theme.typography.button.fontWeight,
+  fontSize: theme.typography.body1.fontSize,
+  lineHeight: theme.typography.h1.lineHeight,
+  letterSpacing: 0,
+}));
 
 export const DividerForm = styled(Box)(({ theme }) => ({
   width: "344px",
@@ -189,9 +178,9 @@ export const DividerForm = styled(Box)(({ theme }) => ({
   textAlign: "center",
   color: alpha(theme.palette.primary.main, 0.3),
   margin: "35px 0 0px",
-  fontFamily: "Poppins, sans-serif",
-  fontWeight: 300,
-  fontSize: "16px",
+  fontFamily: theme.typography.subtitle1.fontFamily,
+  fontWeight: theme.typography.subtitle2.fontWeight,
+  fontSize: theme.typography.subtitle2.fontSize,
 
   "&::before, &::after": {
     content: '""',
@@ -207,9 +196,9 @@ export const DividerForm = styled(Box)(({ theme }) => ({
 }));
 
 export const LabelMail = styled(Typography)(({ theme }) => ({
-  fontFamily: "DM Sans, sans-serif",
+  fontFamily: theme.typography.body1.fontFamily,
   fontSize: "14px",
-  lineHeight: "35px",
+  lineHeight: theme.typography.subtitle2.lineHeight,
   fontWeight: 400,
   textDecoration: "none",
   color: theme.palette.text.primary,
