@@ -5,9 +5,10 @@ import { LogoContainer, LogoImage, LogoText } from "./styles";
 
 interface LogoProps {
   light?: boolean;
+  variant?: "default" | "hero";
 }
 
-export const Logo = ({ light = false }: LogoProps) => {
+export const Logo = ({ light = false, variant = "default" }: LogoProps) => {
   const { t } = useTranslation();
 
   const logoSrc = light ? logoLight : logoDark;
@@ -15,7 +16,7 @@ export const Logo = ({ light = false }: LogoProps) => {
   return (
     <LogoContainer>
       <LogoImage src={logoSrc} alt={t("logo.alt")} />
-      <LogoText $light={light} variant="h3">
+      <LogoText $light={light} $variant={variant} variant="h3">
         {t("logo.title")}
       </LogoText>
     </LogoContainer>

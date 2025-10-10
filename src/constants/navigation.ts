@@ -6,6 +6,7 @@ interface NavLink {
 export const PATHS = {
   USE_CASES: "/use-cases",
   ABOUT: "/about",
+  SIGNIN: "/sign-in",
   DEFAULT: "/#",
 };
 

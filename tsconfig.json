@@ -13,6 +13,7 @@
       "locals/*": ["locals/*"],
       "pages/*": ["pages/*"],
       "constants/*": ["constants/*"],
+      "hooks/*": ["hooks/*"],
       "store/*": ["store/*"]
     }
   }
