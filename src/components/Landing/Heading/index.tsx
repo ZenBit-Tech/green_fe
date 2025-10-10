@@ -1,7 +1,10 @@
 import { Button, Typography } from "@mui/material";
 import { useTranslation } from "react-i18next";
+import CountUp from "react-countup";
 import { Logo } from "@/components/Logo";
 import UploadCard from "@/components/UploadCard";
+import { COMPANY_LINKS } from "@/constants/navigation";
+import { stats } from "@/constants/heading";
 import CheckIcon from "locals/check.svg";
 import {
   StyledAppBar,
@@ -30,12 +33,16 @@ function Heading() {
         <StyledToolbar>
           <Logo />
           <NavBox>
-            <NavLink href="/use" underline="none" color="text.primary">
-              {t("navLanding.use")}
-            </NavLink>
-            <NavLink href="/about" underline="none" color="text.primary">
-              {t("navLanding.about")}
-            </NavLink>
+            {COMPANY_LINKS.map((link) => (
+              <NavLink
+                href={link.path}
+                key={link.key}
+                underline="none"
+                color="text.primary"
+              >
+                {t(link.key)}
+              </NavLink>
+            ))}
             <Button variant="contained" color="primary">
               {t("navLanding.button")}
             </Button>
@@ -72,24 +79,22 @@ function Heading() {
         </BgTextContainer>
         <UploadCard />
       </Background>
-
       <StatContainer>
-        <StatBox>
-          <Typography variant="h1">{t("stats.name1")}</Typography>
-          <Stat variant="subtitle1">{t("stats.desc1")}</Stat>
-        </StatBox>
-        <StatBox>
-          <Typography variant="h1">{t("stats.name2")}</Typography>
-          <Stat variant="subtitle1">{t("stats.desc2")}</Stat>
-        </StatBox>
-        <StatBox>
-          <Typography variant="h1">{t("stats.name3")}</Typography>
-          <Stat variant="subtitle1">{t("stats.desc3")}</Stat>
-        </StatBox>
-        <StatBox>
-          <Typography variant="h1">{t("stats.name4")}</Typography>
-          <Stat variant="subtitle1">{t("stats.desc4")}</Stat>
-        </StatBox>
+        {stats.map((stat, i) => (
+          <StatBox key={i}>
+            <Typography variant="h1">
+              <CountUp
+                start={0}
+                end={stat.value}
+                duration={0.4}
+                separator=" "
+                decimals={stat.value % 1 !== 0 ? 1 : 0}
+                suffix={stat.suffix ?? ""}
+              />
+            </Typography>
+            <Stat variant="subtitle1">{stat.desc}</Stat>
+          </StatBox>
+        ))}
       </StatContainer>
 
       <Line />

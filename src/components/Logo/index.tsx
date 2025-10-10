@@ -1,16 +1,23 @@
 import { useTranslation } from "react-i18next";
-import logo from "locales/logo.svg";
-import { Box, Typography } from "@mui/material";
+import logoDark from "locals/logoDark.svg";
+import logoLight from "locals/logo.svg";
+import { LogoContainer, LogoImage, LogoText } from "./styles";
 
-export const Logo = () => {
+interface LogoProps {
+  light?: boolean;
+}
+
+export const Logo = ({ light = false }: LogoProps) => {
   const { t } = useTranslation();
 
+  const logoSrc = light ? logoLight : logoDark;
+
   return (
-    <Box sx={{ display: "flex", alignItems: "center", gap: "15px" }}>
-      <Box component="img" src={logo} alt={t("logo.alt")} />
-      <Typography variant="h3" color="primary.contrastText">
+    <LogoContainer>
+      <LogoImage src={logoSrc} alt={t("logo.alt")} />
+      <LogoText $light={light} variant="h3">
         {t("logo.title")}
-      </Typography>
-    </Box>
+      </LogoText>
+    </LogoContainer>
   );
 };

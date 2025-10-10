@@ -35,6 +35,7 @@ export const BgTextContainer = styled(Box)({
   flexDirection: "column",
   alignItems: "flex-start",
   textAlign: "left",
+  gap: "15px",
 });
 
 export const LeftHeading = styled(Typography)({
@@ -49,7 +50,7 @@ export const Criteria = styled(Box)({
   display: "flex",
   justifyContent: "space-between",
   alignItems: "center",
-  width: "100%",
+  width: "95%",
 });
 
 export const CriteriaItem = styled(Box)({

@@ -101,6 +101,13 @@ export const theme = createTheme({
       lineHeight: "25px",
       color: alpha(COLORS.WHITE, 0.75),
     },
+    body2: {
+      fontFamily: FONT_FAMILY.DM_SANS,
+      fontWeight: FONT_WEIGHT.LIGHT,
+      fontSize: "32px",
+      lineHeight: "25px",
+      color: alpha(COLORS.WHITE, 0.75),
+    },
     caption: {
       fontFamily: FONT_FAMILY.DM_SANS,
       fontWeight: FONT_WEIGHT.LIGHT,
@@ -126,6 +133,8 @@ export const theme = createTheme({
     MuiButton: {
       styleOverrides: {
         root: {
+          minWidth: "160px",
+          minHeight: "44px",
           padding: "10px",
           borderRadius: 15,
           fontFamily: FONT_FAMILY.DM_SANS,
