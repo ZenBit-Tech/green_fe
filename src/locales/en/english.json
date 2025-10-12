@@ -27,10 +27,16 @@
       "emailInvalid": "Invalid email address"
     }
   },
+  "errorMessage": "An unknown error occurred",
   "nav": {
     "h1": "Ehm...Hello World?",
     "landing": "Landing",
     "about": "About"
+  },
+  "icons": {
+    "errorAlt": "Error",
+    "googleAlt": "Google",
+    "facebookAlt": "Facebook"
   },
   "CTA": {
     "title": "Ready to Take Control of Your Health?",

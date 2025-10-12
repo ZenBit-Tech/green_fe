@@ -36,7 +36,7 @@ export const useSignInForm = () => {
     try {
       await requestMagicLink({ email: data.email }).unwrap();
     } catch (err: unknown) {
-      let errorMessage = "An unknown error occurred";
+      let errorMessage = t("errorMessage");
       if (err && typeof err === "object" && "data" in err) {
         errorMessage = (err as { data?: string }).data || errorMessage;
       }
