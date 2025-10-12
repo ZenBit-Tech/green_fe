@@ -1,28 +1,85 @@
+# Frontend Application
+
+## 📦 Installation & Setup
+
+### Local Development (npm)
+
 1. Install dependencies:
-   npm install
+
+```bash
+npm install
+```
 
 2. Run development server:
-   npm run dev
-   App will be available at: http://localhost:5173
+
+```bash
+npm run dev
+```
+
+App will be available at: http://localhost:5173
 
 3. Build for production:
-   npm run build
+
+```
+npm run build
+```
 
 4. Preview production build:
-   npm run preview
 
-Code Quality:
+```bash
+npm run preview
+```
 
-1. Lint code
-   npm run lint
+🐳 Docker Development (Recommended)
+
+1. Create Docker network:
+
+```bash
+docker network create app-network
+```
+
+2. Start development server with hot-reload:
+
+```bash
+docker-compose -f docker-compose.dev.yml up
+```
+
+App will be available at: http://localhost:5173
+
+3. Build and run production:
+
+```bash
+docker-compose up --build
+```
+
+App will be available at: http://localhost:8080
+
+📚 **Full Docker documentation:** docs/DOCKER.md
+
+**Code Quality**
+
+1. Lint code:
+
+```bash
+npm run lint
+```
 
 2. Fix lint errors:
-   npm run lint:fix
+
+```bash
+npm run lint:fix
+```
 
 3. Format code with Prettier:
-   npm run format
+
+```bash
+npm run format
+```
 
 4. Check formatting:
-   npm run format:check
+
+```bash
+npm run format:check
+```
 
 On commit, staged files will be checked with ESLint and formatted with Prettier automatically.
