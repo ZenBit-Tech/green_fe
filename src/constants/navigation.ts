@@ -7,7 +7,7 @@ export const PATHS = {
   USE_CASES: "/use-cases",
   ABOUT: "/about",
   SIGNIN: "/sign-in",
-  DEFAULT: "/#",
+  DEFAULT: "/",
 };
 
 export const COMPANY_LINKS: NavLink[] = [
