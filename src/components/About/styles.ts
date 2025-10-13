@@ -10,10 +10,11 @@ export const GradientBox = styled(Box)({
 });
 
 export const BgImage = styled("img")(({ theme }) => ({
-  position: "absolute",
+  display: "flex",
+  justifySelf: "center",
   color: alpha(theme.palette.primary.dark, 0.5),
-  top: CONTAINER_POSITIONS.IMAGE_TOP,
-  left: CONTAINER_POSITIONS.IMAGE_LEFT,
+  alignSelf: "center",
+  marginTop: "5%",
 }));
 
 export const AboutTitleBox = styled(Box)({
