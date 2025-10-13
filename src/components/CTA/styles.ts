@@ -1,15 +1,14 @@
-import { styled, Box, Typography, Button } from "@mui/material";
+import { styled, Box, Typography, Button, alpha } from "@mui/material";
 
-export const Wrapper = styled(Box)({
+export const Wrapper = styled(Box)(({ theme }) => ({
   display: "flex",
   flexDirection: "column",
   alignItems: "center",
   justifyContent: "center",
   padding: "80px 20px",
-  background:
-    "linear-gradient(359.35deg, rgba(105, 151, 237, 0.3) -1.53%, rgba(255, 255, 255, 0.09) 105.58%)",
+  background: `linear-gradient(359.35deg, ${alpha(theme.palette.primary.light, 0.3)} -1.53%, ${alpha(theme.palette.primary.contrastText, 0.09)} 105.58%)`,
   minHeight: "50vh",
-});
+}));
 
 export const Subtitle = styled(Typography)(({ theme }) => ({
   maxWidth: "720px",

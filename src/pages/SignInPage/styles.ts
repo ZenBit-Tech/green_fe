@@ -11,7 +11,7 @@ import {
   Alert,
 } from "@mui/material";
 
-export const PageWrapper = styled(Box)({
+export const PageWrapper = styled(Box)(({ theme }) => ({
   display: "flex",
   flexDirection: "column",
   alignItems: "center",
@@ -20,9 +20,8 @@ export const PageWrapper = styled(Box)({
   height: "100vh",
   paddingTop: "54px",
   paddingBottom: "79px",
-  background:
-    "linear-gradient(100.41deg, rgba(255, 255, 255, 0.09) 0%, rgba(105, 151, 237, 0.3) 100%)",
-});
+  background: `linear-gradient(100.41deg, ${alpha(theme.palette.primary.contrastText, 0.09)} 0%, ${alpha(theme.palette.primary.light, 0.3)} 100%)`,
+}));
 
 export const Subtitle = styled(Typography)(({ theme }) => ({
   fontFamily: theme.typography.subtitle1.fontFamily,
@@ -41,7 +40,7 @@ export const DividerPage = styled(Divider)(({ theme }) => ({
   width: "650px",
 }));
 
-export const FormContainer = styled(Paper)({
+export const FormContainer = styled(Paper)(({ theme }) => ({
   display: "flex",
   flexDirection: "column",
   alignItems: "center",
@@ -49,9 +48,9 @@ export const FormContainer = styled(Paper)({
   borderRadius: "15px",
   maxWidth: "929px",
   width: "100%",
-  boxShadow: "0px 4px 4px 0px #0B1F5640",
-  backgroundColor: "rgba(255, 255, 255, 0.8)",
-});
+  boxShadow: `0px 4px 4px 0px ${alpha(theme.palette.primary.main, 0.25)}`,
+  backgroundColor: `${alpha(theme.palette.primary.contrastText, 0.8)}`,
+}));
 
 export const FormTitle = styled(Typography)(({ theme }) => ({
   fontFamily: theme.typography.h1.fontFamily,
@@ -208,7 +207,7 @@ export const LegalLink = styled(Link)(({ theme }) => ({
   textDecoration: "underline",
   color: theme.palette.primary.light,
   "&:hover": {
-    textShadow: `0px 5px 4px #00000056`,
+    textShadow: `0px 5px 4px ${alpha(theme.palette.primary.dark, 0.34)}`,
   },
   "&:active": {
     color: theme.palette.primary.main,
