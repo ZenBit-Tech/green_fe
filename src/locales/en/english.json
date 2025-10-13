@@ -1,7 +1,8 @@
 {
   "logo": {
     "alt": "Logo",
-    "title": "Lab AI"
+    "title": "Lab AI",
+    "description": "Al-powered blood test analysis and health insights"
   },
   "landing": {
     "title": "Landing Page",
@@ -68,7 +69,15 @@
     "drop": "Drop your your document here",
     "click": "or click to browse files",
     "supports": "Supports PDF, JPG, PNG files up to 10MB",
-    "button": "Upload"
+    "button": "Upload",
+    "list": {
+      "title": "What happens next?",
+      "line1": "We'll extract all blood markers from your report",
+      "line2": "You can choose what type of recommendations you want",
+      "line3": "Review and edit any extracted values",
+      "line4": "Get personalized insights and recommendations"
+    },
+    "continue": "Continue to Options"
   },
   "stats": {
     "name1": "50 000+",
@@ -103,5 +112,19 @@
     "text2": "Your health data is sacred. We use enterprise-grade encryption and never share your personal information with third parties.",
     "text3": "Our AI models are trained on peer-reviewed medical literature and validated by healthcare professionals to ensure accuracy.",
     "text4": "Healthcare insights shouldn't be limited by geography or economics. We're making advanced health analysis available to everyone."
+  },
+  "steps": {
+    "upload": "Upload",
+    "options": "Options",
+    "review": "Review",
+    "result": "Result"
+  },
+  "error": {
+    "fileType": "Unsupported file type. Please upload PDF, PNG, or JPG.",
+    "largeFile": "Please upload a smaller file. Max file size in MB:",
+    "pdf": "PDF extraction failed. Please try another file.",
+    "ocr": "OCR processing failed. Please try another image.",
+    "noFile": "No file or extracted text available for upload.",
+    "unknownError": "Uploading failed. Please, try later."
   }
 }

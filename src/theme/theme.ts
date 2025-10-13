@@ -16,7 +16,7 @@ const COLORS = {
   SECONDARY_TEAL: "#4EB9BE",
   SECONDARY_GRAY: "#878F9E",
   SECONDARY_BEIGE: "#DBD69D",
-  SECONDARY_GREEN: "#45A76A80",
+  SECONDARY_GREEN: "#45A76A",
   SECONDARY_RED: "#BC0003",
   FOOTER_BG: "#05184D",
 };
@@ -39,6 +39,9 @@ export const theme = createTheme({
     background: {
       default: COLORS.WHITE,
       paper: COLORS.FOOTER_BG,
+    },
+    info: {
+      main: COLORS.SECONDARY_GREEN,
     },
     action: {
       disabledBackground: COLORS.SECONDARY_GRAY,
