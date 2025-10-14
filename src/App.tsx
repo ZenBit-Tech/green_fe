@@ -1,7 +1,9 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { ThemeProvider } from "@mui/material/styles";
-import { theme } from "./theme/theme";
+import { SignInPage } from "pages/SignInPage/SignInPage";
 import Landing from "pages/LandingPage/Landing";
+import { PATHS } from "constants/navigation";
+import { theme } from "./theme/theme";
 
 function App() {
   return (
@@ -9,7 +11,8 @@ function App() {
       <ThemeProvider theme={theme}>
         <Router>
           <Routes>
-            <Route path="/" element={<Landing />} />
+            <Route path={PATHS.DEFAULT} element={<Landing />} />
+            <Route path={PATHS.SIGNIN} element={<SignInPage />} />
           </Routes>
         </Router>
       </ThemeProvider>

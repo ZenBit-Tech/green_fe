@@ -1,15 +1,14 @@
-import { styled, Box, Typography, Button } from "@mui/material";
+import { styled, Box, Typography, Button, alpha } from "@mui/material";
 
-export const Wrapper = styled(Box)({
+export const Wrapper = styled(Box)(({ theme }) => ({
   display: "flex",
   flexDirection: "column",
   alignItems: "center",
   justifyContent: "center",
   padding: "80px 20px",
-  background:
-    "linear-gradient(359.35deg, rgba(105, 151, 237, 0.3) -1.53%, rgba(255, 255, 255, 0.09) 105.58%)",
+  background: `linear-gradient(359.35deg, ${alpha(theme.palette.primary.light, 0.3)} -1.53%, ${alpha(theme.palette.primary.contrastText, 0.09)} 105.58%)`,
   minHeight: "50vh",
-});
+}));
 
 export const Subtitle = styled(Typography)(({ theme }) => ({
   maxWidth: "720px",
@@ -29,21 +28,4 @@ export const CtaButton = styled(Button)(({ theme }) => ({
   color: theme.palette.primary.contrastText,
   boxShadow: "0px 8px 15px rgba(26, 46, 90, 0.4)",
   transition: "all 0.3s ease",
-
-  "&:hover": {
-    backgroundColor: theme.palette.primary.light,
-    boxShadow: "none",
-  },
-  "&:active": {
-    boxShadow: "0px 4px 10px 9px rgba(0, 0, 0, 0.3)",
-  },
-  "&:disabled": {
-    boxShadow: "none",
-    backgroundColor: theme.palette.action.disabledBackground,
-  },
-  "&:focus-visible": {
-    boxShadow: "none",
-    outline: `3px solid ${theme.palette.primary.light}`,
-    outlineOffset: "0px",
-  },
 }));

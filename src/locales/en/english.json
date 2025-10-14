@@ -1,7 +1,8 @@
 {
   "logo": {
-    "alt": "Logo",
-    "title": "Lab AI"
+    "title": "Lab AI",
+    "subtitle": "AI-powered blood test analysis and health insights",
+    "alt": "Logo"
   },
   "landing": {
     "title": "Landing Page",
@@ -26,10 +27,16 @@
       "emailInvalid": "Invalid email address"
     }
   },
+  "errorMessage": "An unknown error occurred",
   "nav": {
     "h1": "Ehm...Hello World?",
     "landing": "Landing",
     "about": "About"
+  },
+  "icons": {
+    "errorAlt": "Error",
+    "googleAlt": "Google",
+    "facebookAlt": "Facebook"
   },
   "CTA": {
     "title": "Ready to Take Control of Your Health?",
@@ -89,6 +96,24 @@
     "description1": "People who want to proactively monitor their health, understand their biomarkers, and optimize their wellness through data-driven insights.",
     "description2": "Doctors, nurses, and clinicians who need quick, accurate analysis tools to support patient consultations and treatment decisions.",
     "description3": "Personal trainers, nutritionists, and wellness coaches who want to provide evidence-based recommendations to their clients."
+  },
+  "signIn": {
+    "title": "Welcome to Lab AI",
+    "subtitle": "Sign in to access your personalized blood test analysis. Your data is secure and private.",
+    "google": "Sign in with Google",
+    "facebook": "Sign in with Facebook",
+    "divider": "or",
+    "emailLabel": "Email address",
+    "emailPlaceholder": "Enter your email address",
+    "button": "Send sign-in link",
+    "legal": "By continuing, you agree to our ",
+    "terms": "Terms of Service",
+    "and": " and ",
+    "privacy": "Privacy Policy",
+    "emailSentSuccess": "A sign-in link has been sent to your email!",
+    "errorInvalidEmail": "Invalid email format. Please enter the correct email.",
+    "errorFromServer": "An error occurred: {{message}}",
+    "errorNetwork": "Please check your connection and try again."
   },
   "aboutSection": {
     "title": "About Lab AI",

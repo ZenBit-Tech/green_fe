@@ -1,4 +1,4 @@
-import { styled } from "@mui/material/styles";
+import { alpha, styled } from "@mui/material/styles";
 import { Typography, Box } from "@mui/material";
 
 export const LogoContainer = styled(Box)({
@@ -16,14 +16,20 @@ export const LogoImage = styled("img")({
 });
 
 export const LogoText = styled(Typography, {
-  shouldForwardProp: (prop) => prop !== "$light",
-})<{ $light?: boolean }>(({ theme, $light }) => ({
-  color: $light
-    ? theme.palette.primary.contrastText
-    : theme.palette.primary.main,
-  fontFamily: theme.typography.h3.fontFamily,
-  fontWeight: theme.typography.h3.fontWeight,
-  fontSize: theme.typography.h3.fontSize,
-  lineHeight: theme.typography.h3.lineHeight,
-  paddingBottom: "8px",
-}));
+  shouldForwardProp: (prop) => prop !== "$light" && prop !== "$variant",
+})<{ $light?: boolean; $variant?: "default" | "hero" }>(
+  ({ theme, $light, $variant }) => ({
+    color: $light
+      ? theme.palette.primary.contrastText
+      : theme.palette.primary.main,
+    fontFamily: theme.typography.h3.fontFamily,
+    fontWeight: theme.typography.h3.fontWeight,
+    fontSize: theme.typography.h3.fontSize,
+    lineHeight: theme.typography.h3.lineHeight,
+    paddingBottom: "8px",
+    ...($variant === "hero" && {
+      fontSize: "50px",
+      textShadow: `0 4px 4px ${alpha(theme.palette.primary.main, 0.3)}`,
+    }),
+  }),
+);
