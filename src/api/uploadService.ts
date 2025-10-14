@@ -15,7 +15,7 @@ export interface ParsedDataResponse {
   id?: string;
 }
 
-export async function sendParsedData(
+export async function sendParsedDataToServer(
   data: ParsedDataPayload,
 ): Promise<ParsedDataResponse> {
   if (!API_BASE_URL) {

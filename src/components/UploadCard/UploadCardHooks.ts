@@ -5,7 +5,7 @@ import {
   OCR_LANGUAGES,
   OCR_STATUS_RECOGNIZING,
 } from "@/constants/fileUpload";
-import { sendParsedData } from "@/api/uploadService";
+import { sendParsedDataToServer } from "@/api/uploadService";
 import { validateFile } from "./utils/fileUtils";
 import { extractTextFromPDF } from "./utils/pdfUtils";
 import { t } from "i18next";
@@ -106,7 +106,7 @@ export const useUploadCard = (uploadEnabled: boolean = true) => {
       setIsUploading(true);
       setErrorMessage(null);
 
-      await sendParsedData({
+      await sendParsedDataToServer({
         fileName: selectedFile.name,
         fileType: selectedFile.type,
         extractedText: ocrText,
