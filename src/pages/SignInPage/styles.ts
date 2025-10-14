@@ -24,11 +24,8 @@ export const PageWrapper = styled(Box)(({ theme }) => ({
 }));
 
 export const Subtitle = styled(Typography)(({ theme }) => ({
-  fontFamily: theme.typography.subtitle1.fontFamily,
-  fontWeight: theme.typography.subtitle1.fontWeight,
+  ...theme.typography.subtitle1,
   fontSize: theme.typography.body1.fontSize,
-  lineHeight: theme.typography.subtitle1.lineHeight,
-  letterSpacing: 0,
   color: theme.palette.text.primary,
 }));
 
@@ -53,20 +50,14 @@ export const FormContainer = styled(Paper)(({ theme }) => ({
 }));
 
 export const FormTitle = styled(Typography)(({ theme }) => ({
-  fontFamily: theme.typography.h1.fontFamily,
-  fontWeight: theme.typography.h1.fontWeight,
+  ...theme.typography.h1,
   fontSize: theme.typography.body2.fontSize,
-  lineHeight: theme.typography.h1.lineHeight,
-  letterSpacing: 0,
   color: theme.palette.text.primary,
 }));
 
 export const FormSubtitle = styled(Typography)(({ theme }) => ({
-  fontFamily: theme.typography.subtitle1.fontFamily,
-  fontWeight: theme.typography.subtitle1.fontWeight,
+  ...theme.typography.subtitle1,
   fontSize: theme.typography.subtitle2.fontSize,
-  lineHeight: theme.typography.subtitle1.lineHeight,
-  letterSpacing: 0,
   color: theme.palette.text.primary,
 }));
 
@@ -88,10 +79,9 @@ export const SocialButton = styled(Button)(({ theme }) => ({
   justifyContent: "center",
   backgroundColor: "transparent",
   boxShadow: "none",
-  fontSize: theme.typography.subtitle2.fontSize,
+  ...theme.typography.subtitle2,
+  fontWeight: theme.typography.fontWeightRegular,
   fontFamily: theme.typography.body1.fontFamily,
-  fontWeight: 400,
-  lineHeight: theme.typography.subtitle2.lineHeight,
   padding: "0",
 
   "&:hover": {
@@ -126,10 +116,9 @@ export const EmailInput = styled(TextField)(({ theme }) => ({
   input: {
     "&::placeholder": {
       color: alpha(theme.palette.primary.main, 0.9),
-      fontSize: theme.typography.subtitle2.fontSize,
-      fontFamily: theme.typography.subtitle2.fontFamily,
-      fontWeight: 400,
-      lineHeight: theme.typography.subtitle2.lineHeight,
+      ...theme.typography.subtitle2,
+      textAlign: "start",
+      fontWeight: theme.typography.fontWeightRegular,
       margin: "0",
     },
   },
@@ -163,10 +152,9 @@ export const FormAlert = styled(Alert)(({ theme }) => ({
   display: "flex",
   alignItems: "center",
   justifyContent: "center",
-  fontFamily: theme.typography.h1.fontFamily,
+  ...theme.typography.h1,
   fontWeight: theme.typography.button.fontWeight,
   fontSize: theme.typography.body1.fontSize,
-  lineHeight: theme.typography.h1.lineHeight,
   letterSpacing: 0,
 }));
 
@@ -177,9 +165,8 @@ export const DividerForm = styled(Box)(({ theme }) => ({
   textAlign: "center",
   color: alpha(theme.palette.primary.main, 0.3),
   margin: "35px 0 0px",
+  ...theme.typography.subtitle2,
   fontFamily: theme.typography.subtitle1.fontFamily,
-  fontWeight: theme.typography.subtitle2.fontWeight,
-  fontSize: theme.typography.subtitle2.fontSize,
 
   "&::before, &::after": {
     content: '""',
@@ -198,7 +185,7 @@ export const LabelMail = styled(Typography)(({ theme }) => ({
   fontFamily: theme.typography.body1.fontFamily,
   fontSize: "14px",
   lineHeight: theme.typography.subtitle2.lineHeight,
-  fontWeight: 400,
+  fontWeight: theme.typography.fontWeightRegular,
   textDecoration: "none",
   color: theme.palette.text.primary,
 }));
