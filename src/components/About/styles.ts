@@ -14,7 +14,7 @@ export const BgImage = styled("img")(({ theme }) => ({
   justifySelf: "center",
   color: alpha(theme.palette.primary.dark, 0.5),
   alignSelf: "center",
-  marginTop: "5%",
+  marginTop: "65px",
 }));
 
 export const AboutTitleBox = styled(Box)({
@@ -24,24 +24,17 @@ export const AboutTitleBox = styled(Box)({
   justifyContent: "center",
   alignItems: "center",
   justifySelf: "center",
-  paddingTop: "2%",
+  paddingTop: "30px",
 });
 
 export const AboutTitle = styled(Typography)(({ theme }) => ({
-  fontFamily: theme.typography.h1.fontFamily,
-  fontWeight: theme.typography.h1.fontWeight,
   fontSize: theme.typography.h2.fontSize,
-  lineHeight: theme.typography.h1.lineHeight,
   letterSpacing: 0,
   verticalAlign: "middle",
   color: theme.palette.primary.main,
 }));
 
 export const AboutDescription = styled(Typography)(({ theme }) => ({
-  fontFamily: theme.typography.subtitle1.fontFamily,
-  fontWeight: theme.typography.subtitle1.fontWeight,
-  fontSize: theme.typography.subtitle1.fontSize,
-  lineHeight: theme.typography.subtitle1.lineHeight,
   letterSpacing: 0,
   verticalAlign: "middle",
   color: theme.palette.primary.main,
@@ -84,8 +77,6 @@ export const Container4 = styled(Container)({
 });
 
 export const ContainerName = styled(Typography)(({ theme }) => ({
-  fontFamily: theme.typography.h2.fontFamily,
-  fontWeight: theme.typography.h2.fontWeight,
   fontSize: theme.typography.h6.fontSize,
   lineHeight: "30px",
   letterSpacing: 0,
@@ -109,12 +100,11 @@ export const ContainerTitle = styled(Box)({
 
 export const ContainerText = styled(Typography)(({ theme }) => ({
   width: "90%",
-  fontFamily: theme.typography.subtitle1.fontFamily,
-  fontWeight: theme.typography.subtitle1.fontWeight,
   fontSize: theme.typography.subtitle2.fontSize,
   lineHeight: theme.typography.body1.lineHeight,
   letterSpacing: "0%",
   verticalAlign: "middle",
+  textAlign: "left",
   color: theme.palette.primary.main,
 }));
 
@@ -130,22 +120,17 @@ export const TextBox = styled(Box)({
 });
 
 export const AboutTextTitle = styled(Typography)(({ theme }) => ({
-  fontFamily: theme.typography.h1.fontFamily,
-  fontWeight: theme.typography.h1.fontWeight,
   fontSize: theme.typography.body2.fontSize,
-  lineHeight: theme.typography.h1.lineHeight,
   letterSpacing: 0,
   verticalAlign: "middle",
   color: theme.palette.primary.main,
 }));
 
 export const AboutText = styled(Typography)(({ theme }) => ({
-  fontFamily: theme.typography.subtitle1.fontFamily,
-  fontWeight: theme.typography.subtitle1.fontWeight,
   fontSize: theme.typography.body1.fontSize,
-  lineHeight: theme.typography.subtitle1.lineHeight,
   letterSpacing: 0,
   verticalAlign: "middle",
+  textAlign: "left",
   color: theme.palette.primary.main,
   whiteSpace: "pre-line",
 }));

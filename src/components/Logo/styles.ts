@@ -29,13 +29,9 @@ export const LogoText = styled(Typography, {
     color: $light
       ? theme.palette.primary.contrastText
       : theme.palette.primary.main,
-    fontFamily: theme.typography.h3.fontFamily,
-    fontWeight: theme.typography.h3.fontWeight,
-    fontSize: theme.typography.h3.fontSize,
-    lineHeight: theme.typography.h3.lineHeight,
     paddingBottom: "8px",
     ...($variant === "hero" && {
-      fontSize: "50px",
+      fontSize: theme.customSizes.HERO_LOGO_FONT,
       textShadow: "0 4px 4px rgba(0, 0, 0, 0.25)",
     }),
   }),
