@@ -1,6 +1,7 @@
 import { useTranslation } from "react-i18next";
 import { IconButton } from "@mui/material";
 import CircularProgress from "@mui/material/CircularProgress";
+import { useSignInForm } from "@/hooks/useSignInForm";
 import heart from "locals/heart.svg";
 import download from "locals/download.svg";
 import arrow from "locals/arrow.svg";
@@ -43,6 +44,7 @@ interface UploadCardProps {
 export const UploadCard = ({ mode = UPLOAD_MODE.PREVIEW }: UploadCardProps) => {
   const { t } = useTranslation();
   const uploadEnabled = mode === UPLOAD_MODE.FULL;
+  const { handleButtonSignIn } = useSignInForm();
 
   const {
     fileInputRef,
@@ -197,7 +199,7 @@ export const UploadCard = ({ mode = UPLOAD_MODE.PREVIEW }: UploadCardProps) => {
                 {t("card.supports")}
               </SupportsText>
             </UploadBox>
-            <UploadButton variant="contained" color="primary">
+            <UploadButton variant="contained" color="primary" onClick={handleButtonSignIn}>
               {t("card.button")}
             </UploadButton>
           </UploadContainer>

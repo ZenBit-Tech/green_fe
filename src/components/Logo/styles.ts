@@ -1,4 +1,4 @@
-import { styled } from "@mui/material/styles";
+import { alpha, styled } from "@mui/material/styles";
 import { Typography, Box } from "@mui/material";
 
 export const LogoContainer = styled(Box)({
@@ -32,7 +32,7 @@ export const LogoText = styled(Typography, {
     paddingBottom: "8px",
     ...($variant === "hero" && {
       fontSize: theme.customSizes.HERO_LOGO_FONT,
-      textShadow: "0 4px 4px rgba(0, 0, 0, 0.25)",
+      textShadow: `0 4px 4px ${alpha(theme.palette.primary.main, 0.3)}`,
     }),
   }),
 );
