@@ -147,6 +147,21 @@ export const theme = createTheme({
     borderRadius: 15,
   },
   components: {
+    MuiFormHelperText: {
+      styleOverrides: {
+        root: {
+          padding: "0",
+          margin: "0",
+          display: "flex",
+          alignItems: "center",
+          gap: "4px",
+          fontFamily: FONT_FAMILY.DM_SANS,
+          fontWeight: FONT_WEIGHT.LIGHT,
+          fontSize: "12px",
+          color: COLORS.SECONDARY_RED,
+        },
+      },
+    },
     MuiButton: {
       styleOverrides: {
         root: {
