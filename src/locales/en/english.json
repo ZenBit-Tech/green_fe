@@ -69,6 +69,8 @@
     "drop": "Drop your your document here",
     "click": "or click to browse files",
     "supports": "Supports PDF, JPG, PNG files up to 10MB",
+    "resultPrefix": "Your blood result: ",
+    "ready": "File uploaded succesfully",
     "button": "Upload",
     "list": {
       "title": "What happens next?",

@@ -45,7 +45,7 @@ export const Title = styled(Typography)<{ wide?: boolean }>(
       ? theme.typography.h1.lineHeight
       : theme.typography.subtitle1.lineHeight,
     letterSpacing: "1%",
-    marginLeft: "5%",
+    marginLeft: "25px",
     textAlign: wide ? "center" : "left",
   }),
 );
@@ -57,7 +57,7 @@ export const Description = styled(Typography)<{ wide?: boolean }>(
       : theme.typography.subtitle2.fontSize,
     lineHeight: wide ? theme.typography.subtitle2.lineHeight : "20px",
     letterSpacing: "1%",
-    marginLeft: "5%",
+    marginLeft: "25px",
     textAlign: wide ? "center" : "left",
   }),
 );
@@ -85,17 +85,80 @@ export const HiddenInput = styled("input")({
   display: "none",
 });
 
+export const LoaderBox = styled(Box)(({ theme }) => ({
+  width: "100%",
+  height: "112px",
+  borderRadius: "20px",
+  border: `1px dashed ${theme.palette.primary.dark}`,
+  backgroundColor: theme.palette.background.default,
+  position: "relative",
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "center",
+  flexDirection: "column",
+  overflow: "hidden",
+}));
+
+export const LoaderText = styled(Box)({
+  display: "flex",
+  flexDirection: "column",
+  justifyContent: "space-between",
+  alignItems: "flex-start",
+});
+
+export const ProgressBar = styled(Box)<{ progress: number }>(
+  ({ progress, theme }) => ({
+    position: "absolute",
+    bottom: 0,
+    left: 0,
+    height: "100%",
+    width: `${progress}%`,
+    backgroundColor: alpha(theme.palette.primary.light, 0.2),
+    borderRadius: "20px",
+    transition: "width 0.4s ease",
+    zIndex: 0,
+  }),
+);
+
+export const ResultsBox = styled(Box)({
+  height: "100%",
+  width: "90%",
+  display: "flex",
+  gap: "15px",
+  justifySelf: "flex-start",
+  alignItems: "center",
+});
+
+export const DeleteIconBox = styled(Box)(({ theme }) => ({
+  position: "absolute",
+  height: "100px",
+  display: "flex",
+  alignItems: "center",
+  top: "8px",
+  right: "8px",
+  color: theme.palette.error.main,
+  zIndex: 2,
+}));
+
 export const DropText = styled(Typography)<{ wide?: boolean }>(
   ({ theme, wide }) => ({
-    fontSize: wide ? theme.typography.button.fontSize : "14px",
+    fontSize: wide
+      ? theme.typography.button.fontSize
+      : theme.typography.subtitle2.fontSize,
     lineHeight: "28px",
     color: alpha(theme.palette.primary.dark, 0.8),
   }),
 );
 
+export const DropTextPrefix = styled(DropText)(({ theme }) => ({
+  fontSize: theme.typography.subtitle2.fontSize,
+}));
+
 export const CLickText = styled(Typography)<{ wide?: boolean }>(
   ({ theme, wide }) => ({
-    fontSize: wide ? "18px" : "14px",
+    fontSize: wide
+      ? theme.customSizes.UPLOAD_CARD_MEDIUM_FONT
+      : theme.customSizes.UPLOAD_CARD_SMALL_FONT,
     lineHeight: wide ? theme.typography.subtitle1.lineHeight : 0,
     color: alpha(theme.palette.primary.dark, 0.5),
   }),
@@ -103,7 +166,9 @@ export const CLickText = styled(Typography)<{ wide?: boolean }>(
 
 export const SupportsText = styled(Typography)<{ wide?: boolean }>(
   ({ theme, wide }) => ({
-    fontSize: wide ? theme.typography.button.fontSize : "14px",
+    fontSize: wide
+      ? theme.typography.button.fontSize
+      : theme.customSizes.UPLOAD_CARD_SMALL_FONT,
     lineHeight: "41px",
     color: alpha(theme.palette.primary.dark, 0.4),
   }),
@@ -111,7 +176,7 @@ export const SupportsText = styled(Typography)<{ wide?: boolean }>(
 
 export const UploadButton = styled(Button)<{ wide?: boolean }>(
   ({ theme, wide }) => ({
-    width: wide ? "14%" : "32%",
+    width: wide ? "180px" : "150px",
     minHeight: "34px",
     padding: "10px",
     justifySelf: "flex-end",
@@ -122,10 +187,6 @@ export const UploadButton = styled(Button)<{ wide?: boolean }>(
     boxShadow: `0px 4px 4px ${alpha(theme.palette.primary.main, 0.25)}`,
     opacity: 1,
     textTransform: "none",
-    fontFamily: theme.typography.button.fontFamily,
-    fontWeight: theme.typography.button.fontWeight,
-    fontSize: theme.typography.button.fontSize,
-    lineHeight: theme.typography.button.lineHeight,
     transition: "all 0.4s ease-out",
 
     "&:not(:disabled)": {
@@ -218,6 +279,6 @@ export const ButtonsBox = styled(Box)({
 });
 
 export const ContinueButton = styled(Button)({
-  width: "21%",
+  width: "240px",
   height: "44px",
 });
