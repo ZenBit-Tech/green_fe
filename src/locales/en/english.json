@@ -1,8 +1,8 @@
 {
   "logo": {
-    "alt": "Logo",
     "title": "Lab AI",
-    "description": "Al-powered blood test analysis and health insights"
+    "subtitle": "AI-powered blood test analysis and health insights",
+    "alt": "Logo"
   },
   "landing": {
     "title": "Landing Page",

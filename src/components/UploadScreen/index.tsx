@@ -23,7 +23,7 @@ function UploadScreen() {
       <GradientBox>
         <HeadingContainer>
           <Logo variant="hero" />
-          <Heading variant="subtitle2">{t("logo.description")}</Heading>
+          <Heading variant="subtitle2">{t("logo.subtitle")}</Heading>
           <StepsContainer>
             <StepBox>
               <img src={step1} />
