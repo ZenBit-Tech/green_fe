@@ -1,3 +1,4 @@
+import theme from "@/theme/theme";
 import { styled, Box, Button, Typography, alpha } from "@mui/material";
 
 export const PageWrapper = styled(Box)(({ theme }) => ({
@@ -10,7 +11,7 @@ export const PageWrapper = styled(Box)(({ theme }) => ({
 }));
 
 export const ErrorCode = styled(Typography)(({ theme }) => ({
-  fontSize: "400px",
+  fontSize: theme.customSizes.ERROR_CODE,
   fontWeight: theme.typography.fontWeightRegular,
   fontFamily: theme.typography.h1.fontFamily,
   color: theme.palette.primary.main,
@@ -18,7 +19,7 @@ export const ErrorCode = styled(Typography)(({ theme }) => ({
 }));
 
 export const ErrorMessage = styled(Typography)(({ theme }) => ({
-  fontSize: "20px",
+  fontSize: theme.typography.body1.fontSize,
   fontWeight: theme.typography.fontWeightLight,
   fontFamily: theme.typography.subtitle1.fontFamily,
   color: theme.palette.primary.main,
@@ -28,7 +29,7 @@ export const ErrorMessage = styled(Typography)(({ theme }) => ({
 
 export const HomeButton = styled(Button)({
   padding: "12px 40px",
-  fontSize: "18px",
+  fontSize: theme.customSizes.UPLOAD_CARD_MEDIUM_FONT,
 });
 
 export const MainContent = styled(Box)({
