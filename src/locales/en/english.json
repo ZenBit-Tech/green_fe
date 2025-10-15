@@ -125,6 +125,21 @@
     "errorFromServer": "An error occurred: {{message}}",
     "errorNetwork": "Please check your connection and try again."
   },
+  "authCallback": {
+    "verifying": "Verifying your sign-in link...",
+    "errorGeneric": "Oops! Something went wrong.",
+    "errorInvalidToken": "This sign-in link is invalid or has expired. Redirecting you to the sign-in page...",
+    "noTokenFound": "No sign-in token found. Redirecting you to the sign-in page...",
+    "backToHome": "Back to home"
+  },
+  "errorPage": {
+    "code404": "404",
+    "message404": "Oops! The page you're looking for doesn't exist.",
+    "code400": "400",
+    "message400": "Oops! Bad Request.",
+    "codeGeneric": "400",
+    "messageGeneric": "Something went wrong."
+  },
   "aboutSection": {
     "title": "About Lab AI",
     "description": "We're on a mission to democratize healthcare by making blood test analysis accessible, understandable, and actionable for everyone",

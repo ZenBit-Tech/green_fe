@@ -8,6 +8,7 @@ export const PATHS = {
   ABOUT: "/about",
   SIGNIN: "/sign-in",
   UPLOAD: "/upload",
+  MAGIC_LINK: "/auth/magic-link/consume",
   DEFAULT: "/",
 };
 
