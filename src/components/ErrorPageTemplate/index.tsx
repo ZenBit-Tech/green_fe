@@ -37,7 +37,7 @@ export const ErrorPageTemplate = ({
           {t("authCallback.backToHome")}
         </HomeButton>
       </MainContent>
-      <Footer />
+      <Footer variant="compact" />
     </PageWrapper>
   );
 };
