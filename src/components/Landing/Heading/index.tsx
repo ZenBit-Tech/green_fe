@@ -84,7 +84,7 @@ function Heading() {
             </CriteriaItem>
           </Criteria>
         </BgTextContainer>
-        <UploadCard />
+        <UploadCard mode="preview" />
       </Background>
       <StatContainer>
         {stats.map((stat, i) => (

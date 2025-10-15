@@ -15,7 +15,7 @@ export const Logo = ({ light = false, variant = "default" }: LogoProps) => {
 
   return (
     <LogoContainer>
-      <LogoImage src={logoSrc} alt={t("logo.alt")} />
+      <LogoImage src={logoSrc} alt={t("logo.alt")} $variant={variant} />
       <LogoText $light={light} $variant={variant} variant="h3">
         {t("logo.title")}
       </LogoText>
