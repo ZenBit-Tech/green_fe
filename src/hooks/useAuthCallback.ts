@@ -4,8 +4,10 @@ import { useTranslation } from "react-i18next";
 import Cookies from "js-cookie";
 import { PATHS } from "constants/navigation";
 import { useConsumeMagicLinkQuery } from "store/api/apiSlice";
+import { useAuth } from "./useAuth";
 
 export const useAuthCallback = () => {
+  const { isAuthenticated } = useAuth();
   const [searchParams] = useSearchParams();
   const navigate = useNavigate();
   const { t } = useTranslation();
@@ -20,6 +22,8 @@ export const useAuthCallback = () => {
   } | null>(null);
 
   useEffect(() => {
+    if (isAuthenticated) navigate(PATHS.UPLOAD);
+
     if (isSuccess && data) {
       const cookieOptions = {
         secure: true,
@@ -63,7 +67,17 @@ export const useAuthCallback = () => {
         return () => clearTimeout(timer);
       }
     }
-  }, [isSuccess, isError, isLoading, data, token, navigate, error, t]);
+  }, [
+    isSuccess,
+    isError,
+    isLoading,
+    data,
+    token,
+    navigate,
+    error,
+    t,
+    isAuthenticated,
+  ]);
 
   return {
     isLoading,

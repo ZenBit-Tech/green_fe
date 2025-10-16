@@ -6,6 +6,7 @@ import { AuthCallbackPage } from "pages/AuthCallbackPage/AuthCallbackPage";
 import Landing from "pages/LandingPage/Landing";
 import UploadPage from "pages/UploadPage/UploadPage";
 import { ErrorPageTemplate } from "components/ErrorPageTemplate";
+import { PrivateRoute } from "components/PrivateRoute";
 import { PATHS } from "constants/navigation";
 import { theme } from "./theme/theme";
 
@@ -18,9 +19,16 @@ function App() {
         <Router>
           <Routes>
             <Route path={PATHS.DEFAULT} element={<Landing />} />
-            <Route path={PATHS.UPLOAD} element={<UploadPage />} />
             <Route path={PATHS.SIGNIN} element={<SignInPage />} />
             <Route path={PATHS.MAGIC_LINK} element={<AuthCallbackPage />} />
+            <Route
+              path={PATHS.UPLOAD}
+              element={
+                <PrivateRoute>
+                  <UploadPage />
+                </PrivateRoute>
+              }
+            />
             <Route
               path="*"
               element={

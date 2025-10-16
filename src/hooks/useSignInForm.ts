@@ -5,6 +5,7 @@ import { useTranslation } from "react-i18next";
 import { useRequestMagicLinkMutation } from "store/api/apiSlice";
 import { useNavigate } from "react-router-dom";
 import { PATHS } from "@/constants/navigation";
+import { useAuth } from "./useAuth";
 
 const signInSchema = z.object({
   email: z.email({ message: "signIn.errorInvalidEmail" }),
@@ -14,6 +15,7 @@ type SignInFormData = z.infer<typeof signInSchema>;
 
 export const useSignInForm = () => {
   const { t } = useTranslation();
+  const { isAuthenticated } = useAuth();
   const navigate = useNavigate();
 
   const [requestMagicLink, { isLoading, isSuccess }] =
@@ -29,7 +31,11 @@ export const useSignInForm = () => {
   });
 
   const handleButtonSignIn = () => {
-    navigate(PATHS.SIGNIN);
+    if (isAuthenticated) {
+      navigate(PATHS.UPLOAD);
+    } else {
+      navigate(PATHS.SIGNIN);
+    }
   };
 
   const onSubmit = async (data: SignInFormData) => {
