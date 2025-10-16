@@ -8,6 +8,11 @@ interface MagicLinkRequest {
   email: string;
 }
 
+interface AuthTokens {
+  accessToken: string;
+  refreshToken: string;
+}
+
 export const apiSlice = createApi({
   reducerPath: "api",
   baseQuery: fetchBaseQuery({ baseUrl: import.meta.env.VITE_API_BASE_URL }),
@@ -22,7 +27,11 @@ export const apiSlice = createApi({
         body: credentials,
       }),
     }),
+    consumeMagicLink: builder.query<AuthTokens, { token: string }>({
+      query: ({ token }) => `/auth/magic-link/consume?token=${token}`,
+    }),
   }),
 });
 
-export const { useRequestMagicLinkMutation } = apiSlice;
+export const { useRequestMagicLinkMutation, useConsumeMagicLinkQuery } =
+  apiSlice;

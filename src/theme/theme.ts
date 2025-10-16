@@ -31,6 +31,7 @@ const COLORS = {
 };
 const SIZES = {
   HERO_LOGO_FONT: "50px",
+  ERROR_CODE: "400px",
   UPLOAD_CARD_SMALL_FONT: "14px",
   UPLOAD_CARD_MEDIUM_FONT: "18px",
 };
