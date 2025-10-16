@@ -4,8 +4,8 @@ interface NavLink {
 }
 
 export const PATHS = {
-  USE_CASES: "/use-cases",
-  ABOUT: "/about",
+  USE_CASES: "#use-cases",
+  ABOUT: "#about",
   SIGNIN: "/sign-in",
   UPLOAD: "/upload",
   MAGIC_LINK: "/auth/magic-link/consume",

@@ -27,7 +27,7 @@ function About() {
   const { t } = useTranslation();
   return (
     <>
-      <GradientBox>
+      <GradientBox id="about">
         <AboutTitleBox>
           <AboutTitle variant="h1">{t("aboutSection.title")}</AboutTitle>
           <AboutDescription variant="subtitle1">
