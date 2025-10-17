@@ -1,7 +1,12 @@
-import UploadScreen from "@/components/UploadScreen";
+import { AnalysLayout } from "components/AnalysLayout";
+import UploadCard from "components/UploadCard";
 
 function UploadPage() {
-  return <UploadScreen />;
+  return (
+    <AnalysLayout currentStep="upload">
+      <UploadCard mode="full" />
+    </AnalysLayout>
+  );
 }
 
 export default UploadPage;
