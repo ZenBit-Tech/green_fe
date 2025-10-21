@@ -8,6 +8,9 @@ export const PATHS = {
   ABOUT: "#about",
   SIGNIN: "/sign-in",
   UPLOAD: "/upload",
+  OPTION: "/options",
+  REVIEW: "/review",
+  RESULT: "/result",
   MAGIC_LINK: "/auth/magic-link/consume",
   DEFAULT: "/",
 };

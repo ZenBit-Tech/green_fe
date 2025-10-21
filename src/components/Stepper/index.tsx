@@ -1,5 +1,6 @@
 import { useTranslation } from "react-i18next";
-import { STEPS, type Steper } from "constants/steps";
+import { useNavigate } from "react-router-dom";
+import { STEP_PATHS, STEPS, type Steper } from "constants/steps";
 import {
   StepsContainer,
   StepWrapper,
@@ -15,6 +16,13 @@ interface StepperProps {
 export const Stepper = ({ currentStep }: StepperProps) => {
   const { t } = useTranslation();
   const currentIndex = STEPS.indexOf(currentStep);
+  const navigate = useNavigate();
+
+  const handleStepClick = (step: Steper, index: number) => {
+    if (index <= currentIndex) {
+      navigate(STEP_PATHS[step]);
+    }
+  };
 
   return (
     <StepsContainer>
@@ -27,9 +35,15 @@ export const Stepper = ({ currentStep }: StepperProps) => {
         } else {
           status = "upcoming";
         }
-
+        const isClickable = index <= currentIndex;
         return (
-          <StepWrapper key={step}>
+          <StepWrapper
+            key={step}
+            onClick={() => handleStepClick(step, index)}
+            style={{
+              cursor: isClickable ? "pointer" : "default",
+            }}
+          >
             <StepIcon status={status}>{index + 1}</StepIcon>
             <StepLabel status={status}>{t(`steps.${step}`)}</StepLabel>
             {index < STEPS.length - 1 && <StepConnector />}

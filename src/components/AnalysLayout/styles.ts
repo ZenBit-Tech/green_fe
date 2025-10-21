@@ -9,6 +9,7 @@ export const GradientBox = styled(Box)(({ theme }) => ({
   alignItems: "center",
   justifyContent: "center",
   paddingTop: "54px",
+  paddingBottom: "79px",
 }));
 
 export const HeadingContainer = styled(Box)({
