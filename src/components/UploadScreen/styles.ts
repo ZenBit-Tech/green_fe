@@ -24,7 +24,7 @@ export const Heading = styled(Typography)(({ theme }) => ({
 }));
 
 export const StepsContainer = styled(Box)({
-  width: "100%",
+  width: "900px",
   display: "flex",
   flexDirection: "row",
   alignItems: "center",

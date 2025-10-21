@@ -1,6 +1,5 @@
 import { styled, alpha } from "@mui/material/styles";
 import { Box, Typography } from "@mui/material";
-import { CONTAINER_POSITIONS } from "constants/about";
 
 export const GradientBox = styled(Box)({
   width: "100%",
@@ -57,23 +56,27 @@ export const Container = styled(Box)(({ theme }) => ({
 }));
 
 export const Container1 = styled(Container)({
-  top: CONTAINER_POSITIONS.TOP_PRIMARY,
-  left: CONTAINER_POSITIONS.LEFT_1,
+  top: "50%",
+  left: "50%",
+  transform: "translate(-135%, -180%)",
 });
 
 export const Container2 = styled(Container)({
-  top: CONTAINER_POSITIONS.TOP_PRIMARY,
-  left: CONTAINER_POSITIONS.LEFT_2,
+  top: "50%",
+  left: "50%",
+  transform: "translate(30%, -180%)",
 });
 
 export const Container3 = styled(Container)({
-  top: CONTAINER_POSITIONS.TOP_SECONDARY,
-  left: CONTAINER_POSITIONS.LEFT_3,
+  top: "50%",
+  left: "50%",
+  transform: "translate(-150%, -20%)",
 });
 
 export const Container4 = styled(Container)({
-  top: CONTAINER_POSITIONS.TOP_SECONDARY,
-  left: CONTAINER_POSITIONS.LEFT_4,
+  top: "50%",
+  left: "50%",
+  transform: "translate(45%, -30%)",
 });
 
 export const ContainerName = styled(Typography)(({ theme }) => ({

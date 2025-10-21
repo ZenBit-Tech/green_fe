@@ -1,14 +1,14 @@
 import { useState, useRef, useCallback } from "react";
+import { t } from "i18next";
 import Tesseract from "tesseract.js";
 import {
   FILE_TYPE_PDF,
   OCR_LANGUAGES,
   OCR_STATUS_RECOGNIZING,
 } from "@/constants/fileUpload";
-import { sendParsedDataToServer } from "@/api/uploadService";
+import { useSendParsedDataMutation } from "@/store/api/uploadFileApi";
 import { validateFile } from "./utils/fileUtils";
 import { extractTextFromPDF } from "./utils/pdfUtils";
-import { t } from "i18next";
 
 export const useUploadCard = (uploadEnabled: boolean = true) => {
   const [isDragging, setIsDragging] = useState(false);
@@ -22,6 +22,7 @@ export const useUploadCard = (uploadEnabled: boolean = true) => {
   const [showLoader, setShowLoader] = useState(false);
 
   const selectedFileName = selectedFile?.name ?? null;
+  const [sendParsedData] = useSendParsedDataMutation();
 
   const handleBrowseClick = useCallback(() => {
     if (!uploadEnabled) return;
@@ -70,31 +71,31 @@ export const useUploadCard = (uploadEnabled: boolean = true) => {
     }
   }, []);
 
-  const handleFile = useCallback((file: File) => {
-    const error = validateFile(file);
-    if (error) {
-      setErrorMessage(error);
-      setSelectedFile(null);
-      setOcrText(null);
-      setShowLoader(false);
-      return;
-    }
+  const handleFile = useCallback(
+    async (file: File) => {
+      const error = validateFile(file);
 
-    setErrorMessage(null);
-    setSelectedFile(file);
-  }, []);
+      if (error) {
+        setErrorMessage(error);
+        setSelectedFile(null);
+        setOcrText(null);
+        setShowLoader(false);
+        return;
+      }
 
-  const handleUpload = useCallback(async () => {
-    if (!selectedFile) {
-      setErrorMessage(t("error.noFile"));
-      setShowLoader(false);
-      return;
-    }
+      setErrorMessage(null);
+      setSelectedFile(file);
+      await extractTextFromFile(file);
+    },
 
-    setErrorMessage(null);
-    setShowLoader(true);
-    await extractTextFromFile(selectedFile);
-  }, [selectedFile, extractTextFromFile]);
+    [extractTextFromFile],
+  );
+
+  const handleUpload = useCallback(() => {
+    if (!uploadEnabled) return;
+
+    fileInputRef.current?.click();
+  }, [uploadEnabled]);
 
   const handleContinue = useCallback(async () => {
     if (!selectedFile || !ocrText) {
@@ -106,11 +107,11 @@ export const useUploadCard = (uploadEnabled: boolean = true) => {
       setIsUploading(true);
       setErrorMessage(null);
 
-      await sendParsedDataToServer({
+      await sendParsedData({
         fileName: selectedFile.name,
         fileType: selectedFile.type,
         extractedText: ocrText,
-      });
+      }).unwrap();
     } catch (err) {
       const message =
         err instanceof Error ? err.message : t("error.uploadFailed");
@@ -118,7 +119,7 @@ export const useUploadCard = (uploadEnabled: boolean = true) => {
     } finally {
       setIsUploading(false);
     }
-  }, [selectedFile, ocrText]);
+  }, [selectedFile, ocrText, sendParsedData]);
 
   const handleDeleteFile = useCallback(() => {
     setSelectedFile(null);

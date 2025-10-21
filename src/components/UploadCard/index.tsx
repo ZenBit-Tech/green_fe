@@ -57,7 +57,6 @@ export const UploadCard = ({ mode = UPLOAD_MODE.PREVIEW }: UploadCardProps) => {
     handleContinue,
     handleDeleteFile,
     isProcessing,
-    isUploading,
     ocrProgress,
     ocrText,
     isFileSelected,
@@ -66,7 +65,6 @@ export const UploadCard = ({ mode = UPLOAD_MODE.PREVIEW }: UploadCardProps) => {
     selectedFileName,
   } = useUploadCard(uploadEnabled);
 
-  const isButtonDisabled = !isFileSelected || isProcessing || isUploading;
   const buttonClassName = errorMessage ? "error" : "";
 
   return (
@@ -143,7 +141,7 @@ export const UploadCard = ({ mode = UPLOAD_MODE.PREVIEW }: UploadCardProps) => {
                 variant="contained"
                 color="primary"
                 onClick={handleUpload}
-                disabled={isButtonDisabled || isProcessing}
+                disabled={isProcessing}
                 className={buttonClassName}
               >
                 {t("card.button")}
@@ -199,7 +197,11 @@ export const UploadCard = ({ mode = UPLOAD_MODE.PREVIEW }: UploadCardProps) => {
                 {t("card.supports")}
               </SupportsText>
             </UploadBox>
-            <UploadButton variant="contained" color="primary" onClick={handleButtonSignIn}>
+            <UploadButton
+              variant="contained"
+              color="primary"
+              onClick={handleButtonSignIn}
+            >
               {t("card.button")}
             </UploadButton>
           </UploadContainer>
