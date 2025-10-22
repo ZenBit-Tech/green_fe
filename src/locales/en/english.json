@@ -35,8 +35,8 @@
   },
   "icons": {
     "errorAlt": "Error",
-    "googleAlt": "Google",
-    "facebookAlt": "Facebook"
+    "googleAlt": "Google icon",
+    "linkedinAlt": "LinkedIn icon"
   },
   "CTA": {
     "title": "Ready to Take Control of Your Health?",
@@ -111,7 +111,7 @@
     "title": "Welcome to Lab AI",
     "subtitle": "Sign in to access your personalized blood test analysis. Your data is secure and private.",
     "google": "Sign in with Google",
-    "facebook": "Sign in with Facebook",
+    "linkedin": "Sign in with LinkedIn",
     "divider": "or",
     "emailLabel": "Email address",
     "emailPlaceholder": "Enter your email address",

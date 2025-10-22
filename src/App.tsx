@@ -20,6 +20,7 @@ function App() {
           <Routes>
             <Route path={PATHS.DEFAULT} element={<Landing />} />
             <Route path={PATHS.SIGNIN} element={<SignInPage />} />
+            <Route path={PATHS.OAUTH_CALLBACK} element={<AuthCallbackPage />} />
             <Route path={PATHS.MAGIC_LINK} element={<AuthCallbackPage />} />
             <Route
               path={PATHS.UPLOAD}

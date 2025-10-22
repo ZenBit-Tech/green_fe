@@ -2,9 +2,10 @@ import { Box, Button } from "@mui/material";
 import { useTranslation } from "react-i18next";
 import { useSignInForm } from "hooks/useSignInForm";
 import { PATHS } from "constants/navigation";
+import { authService } from "@/api/authService";
 import { Logo } from "@/components/Logo";
 import google from "locals/google.svg";
-import facebook from "locals/facebook.svg";
+import linkedin from "locals/linkedin.svg";
 import errorIcon from "locals/error.svg";
 import {
   PageWrapper,
@@ -40,13 +41,15 @@ export const SignInPage = () => {
         <SocialButtonContainer>
           <SocialButton
             startIcon={<img src={google} alt={t("icons.googleAlt")} />}
+            onClick={() => authService.initiateGoogleLogin()}
           >
             {t("signIn.google")}
           </SocialButton>
           <SocialButton
-            startIcon={<img src={facebook} alt={t("icons.facebookAlt")} />}
+            startIcon={<img src={linkedin} alt={t("icons.linkedinAlt")} />}
+            onClick={() => authService.initiateLinkedInLogin()}
           >
-            {t("signIn.facebook")}
+            {t("signIn.linkedin")}
           </SocialButton>
         </SocialButtonContainer>
 

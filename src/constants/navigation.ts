@@ -9,6 +9,7 @@ export const PATHS = {
   SIGNIN: "/sign-in",
   UPLOAD: "/upload",
   MAGIC_LINK: "/auth/magic-link/consume",
+  OAUTH_CALLBACK: "/auth/callback",
   DEFAULT: "/",
 };
 
