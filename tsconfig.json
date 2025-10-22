@@ -15,6 +15,8 @@
       "constants/*": ["constants/*"],
       "hooks/*": ["hooks/*"],
       "store/*": ["store/*"]
-    }
+    },
+    "strict": true,
+    "forceConsistentCasingInFileNames": true
   }
 }
