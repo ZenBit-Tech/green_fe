@@ -5,6 +5,8 @@
     { "path": "./tsconfig.node.json" }
   ],
   "compilerOptions": {
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
     "baseUrl": "src",
     "paths": {
       "@/*": ["*"],
@@ -13,6 +15,7 @@
       "locals/*": ["locals/*"],
       "pages/*": ["pages/*"],
       "constants/*": ["constants/*"],
+      "hooks/*": ["hooks/*"],
       "store/*": ["store/*"]
     }
   }

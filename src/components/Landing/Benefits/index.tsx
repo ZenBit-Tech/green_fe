@@ -17,7 +17,7 @@ function Benefits() {
   const { t } = useTranslation();
   return (
     <>
-      <BenefitsContainer>
+      <BenefitsContainer id="use-cases">
         <BenefitsText>
           <BenefitsHeading variant="h1">{t("benefits.title")}</BenefitsHeading>
           <Typography variant="subtitle1">

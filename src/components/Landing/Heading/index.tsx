@@ -5,6 +5,7 @@ import { Logo } from "@/components/Logo";
 import UploadCard from "@/components/UploadCard";
 import { COMPANY_LINKS } from "@/constants/navigation";
 import { stats } from "@/constants/heading";
+import { useSignInForm } from "@/hooks/useSignInForm";
 import CheckIcon from "locals/check.svg";
 import {
   StyledAppBar,
@@ -27,6 +28,8 @@ import {
 
 function Heading() {
   const { t } = useTranslation();
+  const { handleButtonSignIn } = useSignInForm();
+
   return (
     <>
       <StyledAppBar position="static">
@@ -43,7 +46,11 @@ function Heading() {
                 {t(link.key)}
               </NavLink>
             ))}
-            <Button variant="contained" color="primary">
+            <Button
+              variant="contained"
+              color="primary"
+              onClick={handleButtonSignIn}
+            >
               {t("navLanding.button")}
             </Button>
           </NavBox>
@@ -77,7 +84,7 @@ function Heading() {
             </CriteriaItem>
           </Criteria>
         </BgTextContainer>
-        <UploadCard />
+        <UploadCard mode="preview" />
       </Background>
       <StatContainer>
         {stats.map((stat, i) => (

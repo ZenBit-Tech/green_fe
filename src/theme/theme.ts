@@ -1,4 +1,13 @@
 import { createTheme, alpha } from "@mui/material/styles";
+
+declare module "@mui/material/styles" {
+  interface Theme {
+    customSizes: typeof SIZES;
+  }
+  interface ThemeOptions {
+    customSizes?: typeof SIZES;
+  }
+}
 const FONT_FAMILY = {
   DM_SANS: '"DM Sans", sans-serif',
   POPPINS: '"Poppins", sans-serif',
@@ -16,9 +25,15 @@ const COLORS = {
   SECONDARY_TEAL: "#4EB9BE",
   SECONDARY_GRAY: "#878F9E",
   SECONDARY_BEIGE: "#DBD69D",
-  SECONDARY_GREEN: "#45A76A80",
+  SECONDARY_GREEN: "#45A76A",
   SECONDARY_RED: "#BC0003",
   FOOTER_BG: "#05184D",
+};
+const SIZES = {
+  HERO_LOGO_FONT: "50px",
+  ERROR_CODE: "400px",
+  UPLOAD_CARD_SMALL_FONT: "14px",
+  UPLOAD_CARD_MEDIUM_FONT: "18px",
 };
 export const theme = createTheme({
   palette: {
@@ -39,6 +54,9 @@ export const theme = createTheme({
     background: {
       default: COLORS.WHITE,
       paper: COLORS.FOOTER_BG,
+    },
+    info: {
+      main: COLORS.SECONDARY_GREEN,
     },
     action: {
       disabledBackground: COLORS.SECONDARY_GRAY,
@@ -130,6 +148,21 @@ export const theme = createTheme({
     borderRadius: 15,
   },
   components: {
+    MuiFormHelperText: {
+      styleOverrides: {
+        root: {
+          padding: "0",
+          margin: "0",
+          display: "flex",
+          alignItems: "center",
+          gap: "4px",
+          fontFamily: FONT_FAMILY.DM_SANS,
+          fontWeight: FONT_WEIGHT.LIGHT,
+          fontSize: "12px",
+          color: COLORS.SECONDARY_RED,
+        },
+      },
+    },
     MuiButton: {
       styleOverrides: {
         root: {
@@ -171,5 +204,6 @@ export const theme = createTheme({
       },
     },
   },
+  customSizes: SIZES,
 });
 export default theme;
