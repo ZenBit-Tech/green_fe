@@ -12,7 +12,7 @@ const getStatusColor = (status: string, theme: Theme): string => {
     case "completed":
       return theme.palette.primary.light;
     default:
-      return theme.palette.secondary.main;
+      return alpha(theme.palette.primary.main, 0.3);
   }
 };
 

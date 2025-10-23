@@ -51,7 +51,7 @@ export const OptionCard = styled(Box, {
   cursor: "pointer",
   border: `1px solid ${alpha(theme.palette.primary.light, 0.45)}`,
   backgroundColor: isSelected
-    ? alpha(theme.palette.info.main, 0.45)
+    ? alpha(theme.palette.info.main, 0.25)
     : theme.palette.primary.contrastText,
   transition: "all 0.2s ease-in-out",
   "&:hover": {
