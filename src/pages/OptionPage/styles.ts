@@ -71,7 +71,7 @@ export const OptionTitle = styled(Typography)(({ theme }) => ({
   fontSize: theme.typography.subtitle1.fontSize,
   fontWeight: theme.typography.fontWeightBold,
   color: theme.palette.text.primary,
-  textShadow: `0px 4px 4px ${alpha(theme.palette.primary.main, 0.3)}`,
+  textShadow: `0px 2px 4px ${alpha(theme.palette.primary.dark, 0.3)}`,
 }));
 
 export const OptionSubtitle = styled(Typography)(({ theme }) => ({
