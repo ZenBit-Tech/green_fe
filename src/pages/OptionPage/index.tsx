@@ -15,6 +15,7 @@ import {
   OptionTitle,
   OptionSubtitle,
   ContinueButton,
+  OptionIcon,
 } from "./styles";
 
 export const OptionsPage = () => {
@@ -35,7 +36,9 @@ export const OptionsPage = () => {
               isSelected={selectedOptions.includes(option.id)}
               onClick={() => handleToggleOption(option.id)}
             >
-              <img src={option.icon} alt={t(option.titleKey)} />
+              <OptionIcon isSelected={selectedOptions.includes(option.id)}>
+                <img src={option.icon} alt={t(option.titleKey)} />
+              </OptionIcon>
               <CardContent>
                 <OptionTitle>{t(option.titleKey)}</OptionTitle>
                 <OptionSubtitle>{t(option.descKey)}</OptionSubtitle>

@@ -82,6 +82,21 @@ export const OptionSubtitle = styled(Typography)(({ theme }) => ({
   lineHeight: "25px",
 }));
 
+export const OptionIcon = styled(Box, {
+  shouldForwardProp: (prop: PropertyKey) => prop !== "isSelected",
+})<OptionCardProps>(({ theme, isSelected }) => ({
+  width: "51px",
+  height: "51px",
+  borderRadius: "10px",
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "center",
+  transition: "all 0.2s ease-in-out",
+  backgroundColor: isSelected
+    ? alpha(theme.palette.info.main, 0.45)
+    : alpha(theme.palette.primary.light, 0.5),
+}));
+
 export const FooterActions = styled(Box)({
   display: "flex",
   justifyContent: "space-between",
