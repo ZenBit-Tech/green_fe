@@ -12,6 +12,7 @@ export const PATHS = {
   REVIEW: "/review",
   RESULT: "/result",
   MAGIC_LINK: "/auth/magic-link/consume",
+  OAUTH_CALLBACK: "/auth/callback",
   DEFAULT: "/",
 };
 
