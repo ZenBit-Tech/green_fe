@@ -71,7 +71,7 @@ export const OptionTitle = styled(Typography)(({ theme }) => ({
   fontSize: theme.typography.subtitle1.fontSize,
   fontWeight: theme.typography.fontWeightBold,
   color: theme.palette.text.primary,
-  textShadow: `0px 2px 4px ${alpha(theme.palette.primary.dark, 0.3)}`,
+  textShadow: `0px 2px 4px ${alpha(theme.palette.primary.dark, 0.25)}`,
 }));
 
 export const OptionSubtitle = styled(Typography)(({ theme }) => ({
@@ -107,9 +107,6 @@ export const FooterActions = styled(Box)({
 export const BackButton = styled(IconButton)(({ theme }) => ({
   color: theme.palette.text.secondary,
   transition: "all 0.3s ease-in-out",
-  "&:hover": {
-    backgroundColor: theme.palette.primary.dark,
-  },
 }));
 
 export const ContinueButton = styled(Button)({

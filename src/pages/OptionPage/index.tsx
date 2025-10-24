@@ -1,6 +1,7 @@
 import { useTranslation } from "react-i18next";
 import { useOptionsPage } from "hooks/useOptionsPage";
 import { OPTIONS_CONFIG } from "constants/options";
+import { STEPS } from "constants/steps";
 import AnalysLayout from "components/AnalysLayout";
 import arrow from "locals/arrow.svg";
 import {
@@ -24,7 +25,7 @@ export const OptionsPage = () => {
     useOptionsPage();
 
   return (
-    <AnalysLayout currentStep="options">
+    <AnalysLayout currentStep={STEPS[1]}>
       <ContentContainer>
         <FormTitle>{t("options.title")}</FormTitle>
         <FormSubtitle>{t("options.subtitle")}</FormSubtitle>
