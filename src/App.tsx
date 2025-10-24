@@ -3,6 +3,7 @@ import { ThemeProvider } from "@mui/material/styles";
 import { useTranslation } from "react-i18next";
 import { SignInPage } from "pages/SignInPage/SignInPage";
 import { AuthCallbackPage } from "pages/AuthCallbackPage/AuthCallbackPage";
+import { OptionsPage } from "pages/OptionPage";
 import Landing from "pages/LandingPage/Landing";
 import UploadPage from "pages/UploadPage/UploadPage";
 import { ErrorPageTemplate } from "components/ErrorPageTemplate";
@@ -26,6 +27,14 @@ function App() {
               element={
                 <PrivateRoute>
                   <UploadPage />
+                </PrivateRoute>
+              }
+            />
+            <Route
+              path={PATHS.OPTION}
+              element={
+                <PrivateRoute>
+                  <OptionsPage />
                 </PrivateRoute>
               }
             />

@@ -167,5 +167,26 @@
     "ocr": "OCR processing failed. Please try another image.",
     "noFile": "No file or extracted text available for upload.",
     "unknownError": "Uploading failed. Please, try later."
+  },
+  "options": {
+    "title": "What would you like to add to your blood test result interpretation?",
+    "subtitle": "Select the types of recommendations you would like to receive with your analysis",
+    "supplement": {
+      "title": "Supplement Recommendations",
+      "desc": "Vitamins and minerals to optimize your levels"
+    },
+    "nutrition": {
+      "title": "Nutrition Recommendations",
+      "desc": "Dietary changes to improve your health markers"
+    },
+    "drug": {
+      "title": "Drug Recommendations",
+      "desc": "Medications that may help optimize your results"
+    },
+    "exercise": {
+      "title": "Exercise Recommendations",
+      "desc": "Physical activities to improve your health markers"
+    },
+    "continue": "Continue to Review"
   }
 }
