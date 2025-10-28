@@ -31,7 +31,7 @@ export const HeaderBox = styled(Box)(({ theme }) => ({
   paddingTop: theme.spacing(2),
 
   "& .MuiTypography-body2": {
-    fontSize: "0.875rem",
+    fontSize: 14,
     color: theme.palette.text.secondary,
   },
 }));
@@ -40,7 +40,7 @@ export const FooterBox = styled(Box)(({ theme }) => ({
   marginTop: theme.spacing(6),
 
   "& .MuiTypography-body2": {
-    fontSize: "0.875rem",
+    fontSize: 14,
     color: theme.palette.text.secondary,
   },
 }));

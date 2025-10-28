@@ -63,7 +63,7 @@ export const TermsOfServicePage = () => {
         <FooterBox>
           <Divider sx={{ mb: 2 }} />
           <Typography variant="body2" color="text.secondary" align="center">
-            © 2025 Lab AI Blood Test Analyzer. All rights reserved.
+            {t("footer.copyright")}
           </Typography>
         </FooterBox>
       </Container>
