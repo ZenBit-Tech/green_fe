@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { ThemeProvider } from "@mui/material";
 import { AuthCallbackPage } from "pages/AuthCallbackPage/AuthCallbackPage";
 import { SignInPage } from "pages/SignInPage/SignInPage";
+import { OptionsPage } from "pages/OptionPage";
 import Landing from "pages/LandingPage/Landing";
 import UploadPage from "pages/UploadPage/UploadPage";
 import { TermsOfServicePage } from "pages/TermsOfServicePage/TermsOfServicePage";
@@ -30,6 +31,14 @@ function App() {
               element={
                 <PrivateRoute>
                   <UploadPage />
+                </PrivateRoute>
+              }
+            />
+            <Route
+              path={PATHS.OPTION}
+              element={
+                <PrivateRoute>
+                  <OptionsPage />
                 </PrivateRoute>
               }
             />

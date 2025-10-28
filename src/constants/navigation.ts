@@ -5,14 +5,17 @@ interface NavLink {
 
 export const PATHS = {
   DEFAULT: "/",
+  USE_CASES: "#use-cases",
+  ABOUT: "#about",
   SIGN_IN: "/sign-in",
   UPLOAD: "/upload",
+  OPTION: "/options",
+  REVIEW: "/review",
+  RESULT: "/result",
   OAUTH_CALLBACK: "/auth/callback",
-  MAGIC_LINK: "/magic-link",
+  MAGIC_LINK: "/auth/magic-link/consume",
   TERMS: "/terms",
   PRIVACY: "/privacy",
-  USE_CASES: "/use-cases",
-  ABOUT: "/about",
 };
 
 export const COMPANY_LINKS: NavLink[] = [
