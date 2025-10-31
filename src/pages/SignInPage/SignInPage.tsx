@@ -39,18 +39,33 @@ export const SignInPage = () => {
         <FormSubtitle>{t("signIn.subtitle")}</FormSubtitle>
 
         <SocialButtonContainer>
-          <SocialButton
-            startIcon={<img src={google} alt={t("icons.googleAlt")} />}
-            onClick={() => authService.initiateGoogleLogin()}
+          {/* Google OAuth */}
+          <Box
+            component="a"
+            href={authService.getGoogleAuthUrl()}
+            sx={{ textDecoration: "none", display: "block", width: "100%" }}
           >
-            {t("signIn.google")}
-          </SocialButton>
-          <SocialButton
-            startIcon={<img src={linkedin} alt={t("icons.linkedinAlt")} />}
-            onClick={() => authService.initiateLinkedInLogin()}
+            <SocialButton
+              fullWidth
+              startIcon={<img src={google} alt={t("icons.googleAlt")} />}
+            >
+              {t("signIn.google")}
+            </SocialButton>
+          </Box>
+
+          {/* LinkedIn OAuth */}
+          <Box
+            component="a"
+            href={authService.getLinkedInAuthUrl()}
+            sx={{ textDecoration: "none", display: "block", width: "100%" }}
           >
-            {t("signIn.linkedin")}
-          </SocialButton>
+            <SocialButton
+              fullWidth
+              startIcon={<img src={linkedin} alt={t("icons.linkedinAlt")} />}
+            >
+              {t("signIn.linkedin")}
+            </SocialButton>
+          </Box>
         </SocialButtonContainer>
 
         <DividerForm>{t("signIn.divider")}</DividerForm>

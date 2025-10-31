@@ -6,7 +6,7 @@ interface NavLink {
 export const PATHS = {
   USE_CASES: "#use-cases",
   ABOUT: "#about",
-  SIGNIN: "/sign-in",
+  SIGN_IN: "/sign-in",
   UPLOAD: "/upload",
   MAGIC_LINK: "/auth/magic-link/consume",
   OAUTH_CALLBACK: "/auth/callback",
