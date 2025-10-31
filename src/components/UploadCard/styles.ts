@@ -2,7 +2,7 @@ import { styled, alpha } from "@mui/material/styles";
 import { Card, Box, Typography, Button } from "@mui/material";
 
 export const Upload = styled(Card)<{ wide?: boolean }>(({ theme, wide }) => ({
-  width: wide ? "90%" : "43%",
+  width: wide ? "1200px" : "43%",
   height: wide ? "911px" : "84%",
   background: "transparent",
   borderRadius: "20px",
@@ -235,11 +235,14 @@ export const ErrorMessage = styled(Typography)(({ theme }) => ({
   textAlign: "center",
   position: "absolute",
   marginTop: "8px",
-  bottom: "-10px",
+  bottom: "-20px",
   backgroundColor: theme.palette.background.default,
+  borderRadius: "20px",
+  padding: "10px 20px",
   lineHeight: "100%",
   left: "50%",
   transform: "translateX(-50%)",
+  whiteSpace: "nowrap",
 }));
 
 export const GreenBox = styled(Box)(({ theme }) => ({

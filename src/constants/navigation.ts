@@ -4,13 +4,20 @@ interface NavLink {
 }
 
 export const PATHS = {
+  DEFAULT: "/",
   USE_CASES: "#use-cases",
   ABOUT: "#about",
-  SIGNIN: "/sign-in",
+  SIGN_IN: "/sign-in",
   UPLOAD: "/upload",
+  OPTION: "/options",
+  REVIEW: "/review",
+  RESULT: "/result",
+  OAUTH_CALLBACK: "/auth/callback",
   MAGIC_LINK: "/auth/magic-link/consume",
   OAUTH_CALLBACK: "/auth/callback",
   DEFAULT: "/",
+  TERMS: "/terms",
+  PRIVACY: "/privacy",
 };
 
 export const COMPANY_LINKS: NavLink[] = [
@@ -20,6 +27,6 @@ export const COMPANY_LINKS: NavLink[] = [
 
 export const SUPPORT_LINKS: NavLink[] = [
   { key: "footer.links.contactUs", path: PATHS.DEFAULT },
-  { key: "footer.links.privacyPolicy", path: PATHS.DEFAULT },
-  { key: "footer.links.termsOfService", path: PATHS.DEFAULT },
+  { key: "footer.links.privacyPolicy", path: PATHS.PRIVACY },
+  { key: "footer.links.termsOfService", path: PATHS.TERMS },
 ];
