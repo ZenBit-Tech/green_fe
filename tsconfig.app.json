@@ -6,7 +6,7 @@
     "useDefineForClassFields": true,
     "lib": ["ES2022", "DOM", "DOM.Iterable"],
     "module": "ESNext",
-    "types": ["vite/client"],
+    "types": ["vite/client", "jest"],
     "skipLibCheck": true,
 
     "moduleResolution": "bundler",
@@ -27,5 +27,5 @@
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true
   },
-  "include": ["src"]
+  "include": ["src", "src/**/*.test.ts", "jest.config.js"]
 }
