@@ -15,10 +15,7 @@ export default {
       "ts-jest",
       {
         useESM: true,
-        tsconfig: {
-          esModuleInterop: true,
-          allowSyntheticDefaultImports: true,
-        },
+        tsconfig: "tsconfig.jest.json",
       },
     ],
   },
