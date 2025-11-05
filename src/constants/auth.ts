@@ -1,4 +1,3 @@
-// Token expiration times (must match backend settings)
 export const TOKEN_EXPIRY = {
   ACCESS_TOKEN_MINUTES: 15,
   REFRESH_TOKEN_DAYS: 7,

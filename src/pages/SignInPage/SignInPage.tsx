@@ -39,7 +39,6 @@ export const SignInPage = () => {
         <FormSubtitle>{t("signIn.subtitle")}</FormSubtitle>
 
         <SocialButtonContainer>
-          {/* Google OAuth */}
           <Box
             component="a"
             href={authService.getGoogleAuthUrl()}
@@ -53,7 +52,6 @@ export const SignInPage = () => {
             </SocialButton>
           </Box>
 
-          {/* LinkedIn OAuth */}
           <Box
             component="a"
             href={authService.getLinkedInAuthUrl()}
