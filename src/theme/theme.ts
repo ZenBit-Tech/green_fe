@@ -3,6 +3,8 @@ import { createTheme, alpha } from "@mui/material/styles";
 declare module "@mui/material/styles" {
   interface Theme {
     customSizes: typeof SIZES;
+    customSpacing: typeof SPACING;
+    customFontSizes: typeof FONT_SIZES;
     fontSizes: typeof FONT_SIZES;
     lineHeights: typeof LINE_HEIGHTS;
     fontFamily: typeof FONT_FAMILY;
@@ -11,6 +13,8 @@ declare module "@mui/material/styles" {
   }
   interface ThemeOptions {
     customSizes?: typeof SIZES;
+    customSpacing?: typeof SPACING;
+    customFontSizes?: typeof FONT_SIZES;
     fontSizes?: typeof FONT_SIZES;
     lineHeights?: typeof LINE_HEIGHTS;
     fontFamily?: typeof FONT_FAMILY;
@@ -77,6 +81,15 @@ const SIZES = {
   UPLOAD_CARD_SMALL_FONT: "14px",
   UPLOAD_CARD_MEDIUM_FONT: "18px",
 };
+const SPACING = {
+  XS: "4px",
+  SM: "8px",
+  MD: "16px",
+  LG: "24px",
+  XL: "32px",
+  XXL: "48px",
+};
+
 export const theme = createTheme({
   palette: {
     primary: {
@@ -247,6 +260,8 @@ export const theme = createTheme({
     },
   },
   customSizes: SIZES,
+  customSpacing: SPACING,
+  customFontSizes: FONT_SIZES,
   fontSizes: FONT_SIZES,
   lineHeights: LINE_HEIGHTS,
   fontFamily: FONT_FAMILY,

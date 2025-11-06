@@ -3,13 +3,13 @@ import { styled, Box } from "@mui/material";
 export const PageWrapper = styled(Box)(({ theme }) => ({
   minHeight: "100vh",
   backgroundColor: theme.palette.background.default,
-  paddingTop: theme.spacing(4),
-  paddingBottom: theme.spacing(4),
+  paddingTop: theme.customSpacing.XL,
+  paddingBottom: theme.customSpacing.XL,
 }));
 
 export const ContentContainer = styled(Box)(({ theme }) => ({
-  marginTop: theme.spacing(2),
-  marginBottom: theme.spacing(4),
+  marginTop: theme.customSpacing.MD,
+  marginBottom: theme.customSpacing.XL,
 
   "& .MuiTypography-body1": {
     color: theme.palette.text.primary,
@@ -17,7 +17,7 @@ export const ContentContainer = styled(Box)(({ theme }) => ({
 }));
 
 export const SectionBox = styled(Box)(({ theme }) => ({
-  marginBottom: theme.spacing(4),
+  marginBottom: theme.customSpacing.XL,
   "&:last-child": {
     marginBottom: 0,
   },
@@ -28,19 +28,19 @@ export const HeaderBox = styled(Box)(({ theme }) => ({
   flexDirection: "column",
   alignItems: "center",
   textAlign: "center",
-  paddingTop: theme.spacing(2),
+  paddingTop: theme.customSpacing.MD,
 
   "& .MuiTypography-body2": {
-    fontSize: 14,
+    fontSize: theme.fontSizes.fontSize14,
     color: theme.palette.text.secondary,
   },
 }));
 
 export const FooterBox = styled(Box)(({ theme }) => ({
-  marginTop: theme.spacing(6),
+  marginTop: theme.customSpacing.XXL,
 
   "& .MuiTypography-body2": {
-    fontSize: 14,
+    fontSize: theme.fontSizes.fontSize14,
     color: theme.palette.text.secondary,
   },
 }));
