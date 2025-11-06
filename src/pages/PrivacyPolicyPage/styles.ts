@@ -2,7 +2,7 @@ import { styled, Box } from "@mui/material";
 
 export const PageWrapper = styled(Box)(({ theme }) => ({
   minHeight: "100vh",
-  backgroundColor: theme.palette.background.default,
+  backgroundColor: theme.colors.WHITE,
   paddingTop: theme.customSpacing.XL,
   paddingBottom: theme.customSpacing.XL,
 }));
@@ -12,7 +12,7 @@ export const ContentContainer = styled(Box)(({ theme }) => ({
   marginBottom: theme.customSpacing.XL,
 
   "& .MuiTypography-body1": {
-    color: theme.palette.text.primary,
+    color: theme.colors.PRIMARY_DARK,
   },
 }));
 
@@ -32,7 +32,7 @@ export const HeaderBox = styled(Box)(({ theme }) => ({
 
   "& .MuiTypography-body2": {
     fontSize: theme.fontSizes.fontSize14,
-    color: theme.palette.text.secondary,
+    color: theme.colors.SECONDARY_GRAY,
   },
 }));
 
@@ -41,6 +41,6 @@ export const FooterBox = styled(Box)(({ theme }) => ({
 
   "& .MuiTypography-body2": {
     fontSize: theme.fontSizes.fontSize14,
-    color: theme.palette.text.secondary,
+    color: theme.colors.SECONDARY_GRAY,
   },
 }));
