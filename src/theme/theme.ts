@@ -1,6 +1,21 @@
 import { createTheme, alpha } from "@mui/material/styles";
+import type { CSSProperties } from "react";
 
 declare module "@mui/material/styles" {
+  interface TypographyVariants {
+    legalPageTitle: CSSProperties;
+    legalPageSubtitle: CSSProperties;
+    legalSectionTitle: CSSProperties;
+    legalSectionBody: CSSProperties;
+  }
+
+  interface TypographyVariantsOptions {
+    legalPageTitle?: CSSProperties;
+    legalPageSubtitle?: CSSProperties;
+    legalSectionTitle?: CSSProperties;
+    legalSectionBody?: CSSProperties;
+  }
+
   interface Theme {
     customSizes: typeof SIZES;
     customSpacing: typeof SPACING;
@@ -10,7 +25,9 @@ declare module "@mui/material/styles" {
     fontFamily: typeof FONT_FAMILY;
     fontWeight: typeof FONT_WEIGHT;
     colors: typeof COLORS;
+    customShadows: typeof SHADOWS;
   }
+
   interface ThemeOptions {
     customSizes?: typeof SIZES;
     customSpacing?: typeof SPACING;
@@ -20,6 +37,16 @@ declare module "@mui/material/styles" {
     fontFamily?: typeof FONT_FAMILY;
     fontWeight?: typeof FONT_WEIGHT;
     colors?: typeof COLORS;
+    customShadows?: typeof SHADOWS;
+  }
+}
+
+declare module "@mui/material/Typography" {
+  interface TypographyPropsVariantOverrides {
+    legalPageTitle: true;
+    legalPageSubtitle: true;
+    legalSectionTitle: true;
+    legalSectionBody: true;
   }
 }
 
@@ -33,10 +60,16 @@ const FONT_SIZES = {
   fontSize24: "24px",
   fontSize32: "32px",
   fontSize36: "36px",
+  fontSize40: "40px",
   fontSize48: "48px",
   fontSize50: "50px",
+  fontSize55: "55px",
   fontSize64: "64px",
   fontSize400: "400px",
+};
+
+const SHADOWS = {
+  LOGO: "0px 4px 4px rgba(0, 0, 0, 0.25)",
 };
 
 const LINE_HEIGHTS = {
@@ -198,6 +231,41 @@ export const theme = createTheme({
       lineHeight: "24px",
       textTransform: "none",
     },
+
+    legalPageTitle: {
+      fontFamily: FONT_FAMILY.POPPINS,
+      fontWeight: FONT_WEIGHT.SEMIBOLD,
+      fontStyle: "normal",
+      fontSize: "40px",
+      lineHeight: "35px",
+      textAlign: "center",
+      color: COLORS.PRIMARY_DARK,
+    },
+    legalPageSubtitle: {
+      fontFamily: FONT_FAMILY.POPPINS,
+      fontWeight: FONT_WEIGHT.LIGHT,
+      fontStyle: "normal",
+      fontSize: "20px",
+      lineHeight: "35px",
+      textAlign: "center",
+      color: COLORS.SECONDARY_GRAY,
+    },
+    legalSectionTitle: {
+      fontFamily: FONT_FAMILY.POPPINS,
+      fontWeight: FONT_WEIGHT.SEMIBOLD,
+      fontStyle: "normal",
+      fontSize: "24px",
+      lineHeight: "35px",
+      color: COLORS.PRIMARY_DARK,
+    },
+    legalSectionBody: {
+      fontFamily: FONT_FAMILY.POPPINS,
+      fontWeight: FONT_WEIGHT.MEDIUM,
+      fontStyle: "normal",
+      fontSize: "24px",
+      lineHeight: "35px",
+      color: COLORS.PRIMARY_DARK,
+    },
   },
   shape: {
     borderRadius: 15,
@@ -267,5 +335,7 @@ export const theme = createTheme({
   fontFamily: FONT_FAMILY,
   fontWeight: FONT_WEIGHT,
   colors: COLORS,
+  customShadows: SHADOWS,
 });
+
 export default theme;
