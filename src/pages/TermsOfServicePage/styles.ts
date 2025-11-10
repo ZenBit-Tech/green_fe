@@ -1,4 +1,6 @@
-import { styled, Box } from "@mui/material";
+import { styled } from "@mui/material/styles";
+import { Box } from "@mui/material";
+import { alpha } from "@mui/material/styles";
 
 export const PageWrapper = styled(Box)(({ theme }) => ({
   minHeight: "100vh",
@@ -8,11 +10,11 @@ export const PageWrapper = styled(Box)(({ theme }) => ({
   "& > div": {
     paddingLeft: 0,
     paddingRight: 0,
-    maxWidth: "1020px",
+    maxWidth: 1020,
 
     [theme.breakpoints.down("md")]: {
-      paddingLeft: "16px",
-      paddingRight: "16px",
+      paddingLeft: 16,
+      paddingRight: 16,
     },
   },
 }));
@@ -26,15 +28,15 @@ export const ContentContainer = styled(Box)(({ theme }) => ({
   },
 }));
 
-export const SectionBox = styled(Box)(({ theme }) => ({
-  marginBottom: theme.customSpacing.XL,
+export const SectionBox = styled(Box)(() => ({
+  marginBottom: 32,
 
   "&:last-child": {
     marginBottom: 0,
   },
 
   "& h2": {
-    marginBottom: "10px",
+    marginBottom: 10,
   },
 }));
 
@@ -43,12 +45,12 @@ export const HeaderBox = styled(Box)(({ theme }) => ({
   flexDirection: "column",
   alignItems: "center",
   textAlign: "center",
-  marginTop: "73px",
-  marginBottom: "42px",
+  marginTop: 73,
+  marginBottom: 42,
 
   [theme.breakpoints.down("md")]: {
-    marginTop: "32px",
-    marginBottom: "24px",
+    marginTop: 32,
+    marginBottom: 24,
   },
 
   "& .MuiTypography-body2": {
@@ -58,20 +60,20 @@ export const HeaderBox = styled(Box)(({ theme }) => ({
 
   "& h1": {
     marginTop: 0,
-    marginBottom: "10px",
+    marginBottom: 10,
   },
 
   "& > div": {
-    marginBottom: "42px",
+    marginBottom: 42,
   },
 }));
 
 export const FooterBox = styled(Box)(({ theme }) => ({
-  marginTop: theme.customSpacing.XXL,
-  marginBottom: "73px",
+  marginTop: 48,
+  marginBottom: 73,
 
   [theme.breakpoints.down("md")]: {
-    marginBottom: "32px",
+    marginBottom: 32,
   },
 
   "& .MuiTypography-root": {
@@ -85,39 +87,38 @@ export const FooterBox = styled(Box)(({ theme }) => ({
 }));
 
 export const TopDivider = styled(Box)(({ theme }) => ({
-  height: "1px",
-  width: "1020px",
-  maxWidth: "1020px",
-  backgroundColor: "#0B1F561A",
-  marginTop: "26px",
+  height: 1,
+  width: 1020,
+  maxWidth: 1020,
+  backgroundColor: alpha(theme.colors.PRIMARY_DARK, 0.1),
+  marginTop: 26,
   marginRight: "auto",
-  marginBottom: "87px",
+  marginBottom: 87,
   marginLeft: "auto",
   opacity: 1,
 
   [theme.breakpoints.down("md")]: {
     width: "calc(100% - 32px)",
     maxWidth: "100%",
-    marginTop: "16px",
-    marginBottom: "32px",
+    marginTop: 16,
+    marginBottom: 32,
   },
 }));
 
 export const BottomDivider = styled(Box)(({ theme }) => ({
-  height: "1px",
+  height: 1,
   width: "100%",
-  maxWidth: "1020px",
-  backgroundColor: "#0B1F561A",
-  marginTop: "100px",
+  maxWidth: 1020,
+  backgroundColor: alpha(theme.colors.PRIMARY_DARK, 0.1),
+  marginTop: 100,
   marginRight: "auto",
-  marginBottom: "23px",
+  marginBottom: 23,
   marginLeft: "auto",
   opacity: 1,
 
   [theme.breakpoints.down("md")]: {
-    width: "calc(100% - 32px)",
     maxWidth: "100%",
-    marginTop: "48px",
-    marginBottom: "16px",
+    marginTop: 48,
+    marginBottom: 16,
   },
 }));

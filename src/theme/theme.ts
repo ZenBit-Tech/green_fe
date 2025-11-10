@@ -17,27 +17,19 @@ declare module "@mui/material/styles" {
   }
 
   interface Theme {
-    customSizes: typeof SIZES;
-    customSpacing: typeof SPACING;
-    customFontSizes: typeof FONT_SIZES;
     fontSizes: typeof FONT_SIZES;
     lineHeights: typeof LINE_HEIGHTS;
     fontFamily: typeof FONT_FAMILY;
     fontWeight: typeof FONT_WEIGHT;
     colors: typeof COLORS;
-    customShadows: typeof SHADOWS;
   }
 
   interface ThemeOptions {
-    customSizes?: typeof SIZES;
-    customSpacing?: typeof SPACING;
-    customFontSizes?: typeof FONT_SIZES;
     fontSizes?: typeof FONT_SIZES;
     lineHeights?: typeof LINE_HEIGHTS;
     fontFamily?: typeof FONT_FAMILY;
     fontWeight?: typeof FONT_WEIGHT;
     colors?: typeof COLORS;
-    customShadows?: typeof SHADOWS;
   }
 }
 
@@ -107,20 +99,6 @@ const COLORS = {
   SECONDARY_GREEN: "#45A76A",
   SECONDARY_RED: "#BC0003",
   FOOTER_BG: "#05184D",
-};
-const SIZES = {
-  HERO_LOGO_FONT: "50px",
-  ERROR_CODE: "400px",
-  UPLOAD_CARD_SMALL_FONT: "14px",
-  UPLOAD_CARD_MEDIUM_FONT: "18px",
-};
-const SPACING = {
-  XS: "4px",
-  SM: "8px",
-  MD: "16px",
-  LG: "24px",
-  XL: "32px",
-  XXL: "48px",
 };
 
 export const theme = createTheme({
@@ -300,7 +278,7 @@ export const theme = createTheme({
           textTransform: "none",
           color: COLORS.WHITE,
           backgroundColor: COLORS.PRIMARY_DARK,
-          boxShadow: `0px 4px 4px ${alpha(COLORS.PRIMARY_DARK, 0.25)}`,
+          boxShadow: SHADOWS.LOGO,
           transition: "all 0.3s cubic-bezier(0.45, 1.45, 0.8, 1)",
           "&:hover": {
             backgroundColor: alpha(COLORS.PRIMARY_LIGHT, 0.55),
@@ -308,7 +286,7 @@ export const theme = createTheme({
           },
           "&:active": {
             backgroundColor: alpha(COLORS.PRIMARY_LIGHT, 0.5),
-            boxShadow: `0px 4px 4px ${alpha(COLORS.PRIMARY_DARK, 0.25)}`,
+            boxShadow: SHADOWS.LOGO,
             transition: "all 0.4s ease-in",
           },
           "&.Mui-focusVisible": {
@@ -327,15 +305,12 @@ export const theme = createTheme({
       },
     },
   },
-  customSizes: SIZES,
-  customSpacing: SPACING,
-  customFontSizes: FONT_SIZES,
+
   fontSizes: FONT_SIZES,
   lineHeights: LINE_HEIGHTS,
   fontFamily: FONT_FAMILY,
   fontWeight: FONT_WEIGHT,
   colors: COLORS,
-  customShadows: SHADOWS,
 });
 
 export default theme;
