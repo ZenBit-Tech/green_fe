@@ -279,6 +279,12 @@
     },
     "continue": "Continue to Review"
   },
+  "loader": {
+    "title": "Processing the result is in progress",
+    "wait": "Please wait while Lab AI processes your test results.",
+    "done": "Done!",
+    "100": "100%"
+  },
   "contact": {
     "title": "Contact Us",
     "description_part_1": "Please fill out the form below so that we can assist you in resolving your issue. If for any reason we do not get in touch with you after receiving your request, please contact us at email",
