@@ -240,7 +240,7 @@ export const theme = createTheme({
     },
     legalSectionBody: {
       fontFamily: FONT_FAMILY.POPPINS,
-      fontWeight: FONT_WEIGHT.MEDIUM,
+      fontWeight: FONT_WEIGHT.REGULAR,
       fontStyle: "normal",
       fontSize: "24px",
       lineHeight: "35px",
@@ -388,6 +388,38 @@ export const theme = createTheme({
           border: "none",
           "& .MuiOutlinedInput-notchedOutline": {
             border: "none",
+          },
+        },
+      },
+    },
+
+    MuiTypography: {
+      styleOverrides: {
+        root: {
+          "&.MuiTypography-legalPageTitle": {
+            "@media (max-width: 426px)": {
+              fontSize: "24px",
+            },
+          },
+
+          "&.MuiTypography-legalPageSubtitle": {
+            "@media (max-width: 426px)": {
+              fontSize: "14px",
+            },
+          },
+
+          "&.MuiTypography-legalSectionTitle": {
+            "@media (max-width: 426px)": {
+              fontSize: "16px",
+              fontWeight: FONT_WEIGHT.SEMIBOLD,
+            },
+          },
+
+          "&.MuiTypography-legalSectionBody": {
+            "@media (max-width: 426px)": {
+              fontSize: "16px",
+              fontWeight: FONT_WEIGHT.REGULAR,
+            },
           },
         },
       },

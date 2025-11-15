@@ -16,6 +16,11 @@ export const PageWrapper = styled(Box)(({ theme }) => ({
       paddingLeft: 16,
       paddingRight: 16,
     },
+
+    "@media (max-width: 426px)": {
+      paddingLeft: 28,
+      paddingRight: 27,
+    },
   },
 }));
 
@@ -28,7 +33,7 @@ export const ContentContainer = styled(Box)(({ theme }) => ({
   },
 }));
 
-export const SectionBox = styled(Box)(() => ({
+export const SectionBox = styled(Box)(({ theme }) => ({
   marginBottom: 32,
 
   "&:last-child": {
@@ -37,6 +42,22 @@ export const SectionBox = styled(Box)(() => ({
 
   "& h2": {
     marginBottom: 10,
+  },
+
+  "@media (max-width: 426px)": {
+    marginBottom: 0,
+    "& h2": {
+      fontWeight: theme.fontWeight.SEMIBOLD,
+      fontSize: 16,
+      marginBottom: 0,
+      lineHeight: theme.lineHeights.lineHeight20,
+    },
+
+    "& p": {
+      fontWeight: theme.fontWeight.REGULAR,
+      fontSize: 16,
+      lineHeight: theme.lineHeights.lineHeight20,
+    },
   },
 }));
 
@@ -53,6 +74,11 @@ export const HeaderBox = styled(Box)(({ theme }) => ({
     marginBottom: 24,
   },
 
+  "@media (max-width: 426px)": {
+    marginTop: 60,
+    marginBottom: 6,
+  },
+
   "& .MuiTypography-body2": {
     fontSize: theme.fontSizes.fontSize14,
     color: theme.colors.SECONDARY_GRAY,
@@ -61,6 +87,10 @@ export const HeaderBox = styled(Box)(({ theme }) => ({
   "& h1": {
     marginTop: 0,
     marginBottom: 10,
+
+    "@media (max-width: 426px)": {
+      fontSize: 24,
+    },
   },
 
   "& > div": {
@@ -76,13 +106,22 @@ export const FooterBox = styled(Box)(({ theme }) => ({
     marginBottom: 32,
   },
 
+  "@media (max-width: 426px)": {
+    marginTop: 60,
+    marginBottom: 10,
+  },
+
   "& .MuiTypography-root": {
-    fontSize: theme.fontSizes.fontSize14,
+    fontSize: theme.fontSizes.fontSize20,
     color: theme.colors.SECONDARY_GRAY,
     margin: "0 auto",
     display: "block",
     textAlign: "center",
     width: "fit-content",
+
+    "@media (max-width: 426px)": {
+      fontSize: 14,
+    },
   },
 }));
 
@@ -103,6 +142,13 @@ export const TopDivider = styled(Box)(({ theme }) => ({
     marginTop: 16,
     marginBottom: 32,
   },
+
+  "@media (max-width: 426px)": {
+    marginTop: 0,
+    marginBottom: 37,
+    width: "100%",
+    maxWidth: "100%",
+  },
 }));
 
 export const BottomDivider = styled(Box)(({ theme }) => ({
@@ -120,5 +166,10 @@ export const BottomDivider = styled(Box)(({ theme }) => ({
     maxWidth: "100%",
     marginTop: 48,
     marginBottom: 16,
+  },
+
+  "@media (max-width: 426px)": {
+    marginTop: 0,
+    marginBottom: 10,
   },
 }));
