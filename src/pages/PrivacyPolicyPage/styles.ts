@@ -46,16 +46,17 @@ export const SectionBox = styled(Box)(({ theme }) => ({
 
   "@media (max-width: 426px)": {
     marginBottom: 0,
+
     "& h2": {
       fontWeight: theme.fontWeight.SEMIBOLD,
-      fontSize: 16,
+      fontSize: theme.fontSizes.fontSize16,
       marginBottom: 0,
       lineHeight: theme.lineHeights.lineHeight20,
     },
 
     "& p": {
       fontWeight: theme.fontWeight.REGULAR,
-      fontSize: 16,
+      fontSize: theme.fontSizes.fontSize16,
       lineHeight: theme.lineHeights.lineHeight20,
     },
   },
@@ -80,6 +81,7 @@ export const HeaderBox = styled(Box)(({ theme }) => ({
   },
 
   "& .MuiTypography-body2": {
+    fontSize: theme.fontSizes.fontSize14,
     color: theme.colors.SECONDARY_GRAY,
   },
 
@@ -88,8 +90,14 @@ export const HeaderBox = styled(Box)(({ theme }) => ({
     marginBottom: 10,
 
     "@media (max-width: 426px)": {
-      fontSize: 24,
-      marginBottom: "0 !important",
+      fontSize: theme.fontSizes.fontSize24,
+    },
+  },
+
+  // ✅ Перенесенные стили для legalPageSubtitle
+  "& .MuiTypography-legalPageSubtitle": {
+    "@media (max-width: 426px)": {
+      fontSize: theme.fontSizes.fontSize14,
     },
   },
 
@@ -120,7 +128,13 @@ export const FooterBox = styled(Box)(({ theme }) => ({
     width: "fit-content",
 
     "@media (max-width: 426px)": {
-      fontSize: 14,
+      fontSize: theme.fontSizes.fontSize16,
+    },
+  },
+
+  "& .MuiTypography-legalPageSubtitle": {
+    "@media (max-width: 426px)": {
+      fontSize: theme.fontSizes.fontSize14,
     },
   },
 }));
@@ -130,7 +144,7 @@ export const TopDivider = styled(Box)(({ theme }) => ({
   width: 1020,
   maxWidth: 1020,
   backgroundColor: alpha(theme.colors.PRIMARY_DARK, 0.1),
-
+  marginTop: 26,
   marginRight: "auto",
   marginBottom: 87,
   marginLeft: "auto",
@@ -144,7 +158,7 @@ export const TopDivider = styled(Box)(({ theme }) => ({
   },
 
   "@media (max-width: 426px)": {
-    marginTop: 0,
+    marginTop: 10,
     marginBottom: 37,
     width: "100%",
     maxWidth: "100%",
