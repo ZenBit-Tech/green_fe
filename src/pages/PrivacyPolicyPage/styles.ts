@@ -94,7 +94,6 @@ export const HeaderBox = styled(Box)(({ theme }) => ({
     },
   },
 
-  // ✅ Перенесенные стили для legalPageSubtitle
   "& .MuiTypography-legalPageSubtitle": {
     "@media (max-width: 426px)": {
       fontSize: theme.fontSizes.fontSize14,
