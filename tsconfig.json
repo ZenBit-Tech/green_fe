@@ -17,5 +17,6 @@
     },
     "strict": true,
     "forceConsistentCasingInFileNames": true
-  }
+  },
+  "types": ["vite/client", "jest", "@testing-library/jest-dom"]
 }
