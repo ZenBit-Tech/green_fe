@@ -5,13 +5,13 @@ export default {
     "^@/(.*)$": "<rootDir>/src/$1",
     "^components/(.*)$": "<rootDir>/src/components/$1",
     "^locales/(.*)$": "<rootDir>/src/locales/$1",
-    "^locals/(.*)$": "<rootDir>/locals/$1", // ✅ Добавить для SVG
+    "^locals/(.*)$": "<rootDir>/locals/$1",
     "^pages/(.*)$": "<rootDir>/src/pages/$1",
     "^constants/(.*)$": "<rootDir>/src/constants/$1",
     "^hooks/(.*)$": "<rootDir>/src/hooks/$1",
     "^store/(.*)$": "<rootDir>/src/store/$1",
     "\\.(css|less|scss|sass)$": "identity-obj-proxy",
-    "\\.(svg|png|jpg|jpeg|gif)$": "<rootDir>/__mocks__/fileMock.js", // ✅ Добавить для изображений
+    "\\.(svg|png|jpg|jpeg|gif)$": "<rootDir>/__mocks__/fileMock.js",
   },
   transform: {
     "^.+\\.(ts|tsx)$": [
@@ -27,7 +27,7 @@ export default {
           moduleResolution: "bundler",
           strict: true,
           skipLibCheck: true,
-          types: ["jest", "@testing-library/jest-dom", "node"], // ✅ Добавить node
+          types: ["jest", "@testing-library/jest-dom", "node"],
         },
       },
     ],

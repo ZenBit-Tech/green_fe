@@ -67,7 +67,7 @@ export const StyledModalTitle = styled(Typography)(({ theme }) => ({
   fontFamily: "Poppins",
   fontSize: theme.fontSizes.fontSize32,
   fontWeight: theme.fontWeight.MEDIUM,
-  lineHeight: 1.06,
+  lineHeight: theme.lineHeights.lineHeight30,
   letterSpacing: 0,
   textAlign: "center",
   marginBottom: 57,
@@ -76,7 +76,7 @@ export const StyledModalTitle = styled(Typography)(({ theme }) => ({
     width: 258,
     height: 50,
     fontSize: theme.fontSizes.fontSize20,
-    lineHeight: 1.25,
+    lineHeight: theme.lineHeights.lineHeight25,
     marginBottom: 31,
   },
 }));
@@ -113,7 +113,7 @@ export const StyledConfirmButton = styled(Button)(({ theme }) => ({
   fontFamily: "DM Sans",
   fontSize: theme.fontSizes.fontSize24,
   fontWeight: theme.fontWeight.REGULAR,
-  lineHeight: 1.45,
+  lineHeight: theme.lineHeights.lineHeight35,
   letterSpacing: 0,
   textTransform: "none",
   boxShadow: "none",
@@ -128,7 +128,7 @@ export const StyledConfirmButton = styled(Button)(({ theme }) => ({
     minWidth: 87,
     fontSize: theme.fontSizes.fontSize16,
     fontWeight: theme.fontWeight.REGULAR,
-    lineHeight: 2.18,
+    lineHeight: theme.lineHeights.lineHeight35,
   },
 }));
 
@@ -149,7 +149,7 @@ export const StyledCancelButton = styled(Button)(({ theme }) => ({
   fontFamily: "DM Sans",
   fontSize: theme.fontSizes.fontSize24,
   fontWeight: theme.fontWeight.REGULAR,
-  lineHeight: 1.45,
+  lineHeight: theme.lineHeights.lineHeight35,
   letterSpacing: 0,
   textTransform: "none",
   boxShadow: "none",
@@ -165,7 +165,7 @@ export const StyledCancelButton = styled(Button)(({ theme }) => ({
 
     fontSize: theme.fontSizes.fontSize16,
     fontWeight: theme.fontWeight.REGULAR,
-    lineHeight: 2.18,
+    lineHeight: theme.lineHeights.lineHeight35,
   },
 }));
 
