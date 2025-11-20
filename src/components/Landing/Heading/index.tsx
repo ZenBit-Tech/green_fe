@@ -1,4 +1,3 @@
-import { Button } from "@mui/material";
 import { useTranslation } from "react-i18next";
 import CountUp from "react-countup";
 import { Logo } from "@/components/Logo";
@@ -9,6 +8,7 @@ import { stats } from "@/constants/heading";
 import { useSignInForm } from "@/hooks/useSignInForm";
 import { useAuth } from "@/hooks/useAuth";
 import CheckIcon from "locals/check.svg";
+import heart from "locals/heart.svg";
 import {
   StyledAppBar,
   StyledToolbar,
@@ -27,6 +27,12 @@ import {
   Stat,
   Line,
   StatName,
+  GetStartedButton,
+  ButtonWrapper,
+  PreTitleBox,
+  PreTitle,
+  BackgroundWrapper,
+  UploadButton,
 } from "./styles";
 
 function Heading() {
@@ -50,48 +56,63 @@ function Heading() {
                 {t(link.key)}
               </NavLink>
             ))}
-
+            
             {isAuthenticated ? (
               <LogoutButton />
             ) : (
-              <Button
+              <GetStartedButton
                 variant="contained"
                 color="primary"
                 onClick={handleButtonSignIn}
               >
                 {t("navLanding.button")}
-              </Button>
+              </GetStartedButton>
             )}
           </NavBox>
         </StyledToolbar>
       </StyledAppBar>
 
       <Background>
-        <BgTextContainer>
-          <LeftHeading>{t("bg.heading")}</LeftHeading>
-          <LeftSubtitle>{t("bg.text")}</LeftSubtitle>
-          <Criteria>
-            <CriteriaItem>
-              <CriteriaIcon src={CheckIcon} alt="check" />
-              <CriteriaText>{t("bg.criteria1")}</CriteriaText>
-            </CriteriaItem>
+        <BackgroundWrapper>
+          <BgTextContainer>
+            <LeftHeading>{t("bg.heading")}</LeftHeading>
+            <LeftSubtitle>{t("bg.text")}</LeftSubtitle>
+            <Criteria>
+              <CriteriaItem>
+                <CriteriaIcon src={CheckIcon} alt="check" />
+                <CriteriaText>{t("bg.criteria1")}</CriteriaText>
+              </CriteriaItem>
 
-            <CriteriaItem>
-              <CriteriaIcon src={CheckIcon} alt="check" />
-              <CriteriaText>{t("bg.criteria2")}</CriteriaText>
-            </CriteriaItem>
+              <CriteriaItem>
+                <CriteriaIcon src={CheckIcon} alt="check" />
+                <CriteriaText>{t("bg.criteria2")}</CriteriaText>
+              </CriteriaItem>
 
-            <CriteriaItem>
-              <CriteriaIcon src={CheckIcon} alt="check" />
-              <CriteriaText>{t("bg.criteria3")}</CriteriaText>
-            </CriteriaItem>
-          </Criteria>
-        </BgTextContainer>
-        <UploadCard mode="preview" />
+              <CriteriaItem>
+                <CriteriaIcon src={CheckIcon} alt="check" />
+                <CriteriaText>{t("bg.criteria3")}</CriteriaText>
+              </CriteriaItem>
+            </Criteria>
+          </BgTextContainer>
+          <UploadCard mode="preview" />
+        </BackgroundWrapper>
+        <ButtonWrapper>
+          <UploadButton
+            variant="contained"
+            color="primary"
+            onClick={handleButtonSignIn}
+          >
+            {t("card.button")}
+          </UploadButton>
+          <PreTitleBox>
+            <img src={heart} alt="heart" width={18} height={18} />
+            <PreTitle>{t("card.preTitle")}</PreTitle>
+          </PreTitleBox>
+        </ButtonWrapper>
       </Background>
       <StatContainer>
         {stats.map((stat, i) => (
-          <StatBox key={i}>
+          <StatBox key={i} className={`stat-${i}`}>
             <StatName>
               <CountUp
                 start={0}

@@ -3,16 +3,16 @@ import { Box, Typography } from "@mui/material";
 
 export const GradientBox = styled(Box)({
   width: "100%",
-  height: "1280px",
+  height: "1180px",
   position: "relative",
+  display: "flex",
+  flexDirection: "column",
+  alignItems: "center",
   background: `linear-gradient(317.68deg, rgba(255, 255, 255, 0.09) 44.63%, rgba(105, 151, 237, 0.3) 102.47%)`,
 });
 
 export const BgImage = styled("img")(({ theme }) => ({
-  display: "flex",
-  justifySelf: "center",
   color: alpha(theme.colors.PRIMARY_DARK, 0.5),
-  alignSelf: "center",
   marginTop: "65px",
 }));
 
@@ -22,7 +22,6 @@ export const AboutTitleBox = styled(Box)({
   flexDirection: "column",
   justifyContent: "center",
   alignItems: "center",
-  justifySelf: "center",
   paddingTop: "30px",
 });
 
@@ -65,25 +64,25 @@ export const Container = styled(Box)(({ theme }) => ({
 }));
 
 export const Container1 = styled(Container)({
-  top: "50%",
+  top: "52%",
   left: "50%",
   transform: "translate(-135%, -180%)",
 });
 
 export const Container2 = styled(Container)({
-  top: "50%",
+  top: "52%",
   left: "50%",
   transform: "translate(30%, -180%)",
 });
 
 export const Container3 = styled(Container)({
-  top: "50%",
+  top: "52%",
   left: "50%",
   transform: "translate(-150%, -20%)",
 });
 
 export const Container4 = styled(Container)({
-  top: "50%",
+  top: "52%",
   left: "50%",
   transform: "translate(45%, -30%)",
 });
@@ -132,7 +131,6 @@ export const TextBox = styled(Box)({
   flexDirection: "column",
   justifyContent: "center",
   alignItems: "flex-start",
-  justifySelf: "center",
 });
 
 export const AboutTextTitle = styled(Typography)(({ theme }) => ({
