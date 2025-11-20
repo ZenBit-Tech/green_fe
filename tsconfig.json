@@ -16,7 +16,7 @@
       "store/*": ["src/store/*"]
     },
     "strict": true,
-    "forceConsistentCasingInFileNames": true
-  },
-  "types": ["vite/client", "jest", "@testing-library/jest-dom"]
+    "forceConsistentCasingInFileNames": true,
+    "types": ["vite/client", "jest", "@testing-library/jest-dom"]
+  }
 }
