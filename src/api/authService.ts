@@ -1,5 +1,5 @@
 import Cookies from "js-cookie";
-import { COOKIE_EXPIRY, BACKEND_URL } from "@/constants/auth";
+import { COOKIE_EXPIRY } from "@/constants/auth";
 import { ENV } from "@/config/env";
 
 const API_BASE_URL = ENV.API_BASE_URL;
@@ -61,18 +61,29 @@ export const authService = {
 
 export const logout = async (): Promise<void> => {
   try {
-    await fetch(`${BACKEND_URL}/auth/logout`, {
-      method: "POST",
-      credentials: "include",
-      headers: {
-        "Content-Type": "application/json",
-      },
-    });
+    const accessToken = authService.getAccessTokenFromCookie();
 
-    Cookies.remove("accessToken");
-    Cookies.remove("refreshToken");
+    if (accessToken) {
+      const response = await fetch(`${API_BASE_URL}/api/auth/logout`, {
+        method: "POST",
+        credentials: "include",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${accessToken}`,
+        },
+      });
+
+      if (!response.ok) {
+        const errorText = await response.text();
+        throw new Error(
+          `Backend logout failed: ${response.status} ${response.statusText} - ${errorText}`,
+        );
+      }
+    }
   } catch (error) {
     console.error("Logout error:", error);
-    throw error;
+  } finally {
+    Cookies.remove("accessToken");
+    Cookies.remove("refreshToken");
   }
 };
