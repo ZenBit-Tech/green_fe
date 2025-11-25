@@ -43,6 +43,7 @@ declare module "@mui/material/Typography" {
 }
 
 const FONT_SIZES = {
+  fontSize11: "11px",
   fontSize12: "12px",
   fontSize13: "13px",
   fontSize14: "14px",
@@ -60,6 +61,7 @@ const FONT_SIZES = {
   fontSize50: "50px",
   fontSize55: "55px",
   fontSize64: "64px",
+  fontSize150: "150px",
   fontSize400: "400px",
 };
 
@@ -68,6 +70,7 @@ const SHADOWS = {
 };
 
 const LINE_HEIGHTS = {
+  lineHeight15: "15px",
   lineHeight20: "20px",
   lineHeight24: "24px",
   lineHeight25: "25px",
@@ -102,6 +105,8 @@ const COLORS = {
   SECONDARY_SILVER: "#D9D9D9",
   SECONDARY_BEIGE: "#DBD69D",
   SECONDARY_GREEN: "#45A76A",
+  SECONDARY_YELLOW: "#FFE207",
+  SECONDARY_ORANGE: "#C89600",
   SECONDARY_RED: "#BC0003",
   FOOTER_BG: "#05184D",
   SHADOW_BLACK: "#000000",
@@ -295,6 +300,11 @@ export const theme = createTheme({
           backgroundColor: COLORS.PRIMARY_DARK,
           boxShadow: SHADOWS.LOGO,
           transition: "all 0.3s cubic-bezier(0.45, 1.45, 0.8, 1)",
+
+          "@media (max-width:900px)": {
+            fontSize: FONT_SIZES.fontSize16,
+          },
+
           "&:hover": {
             backgroundColor: alpha(COLORS.PRIMARY_LIGHT, 0.55),
             boxShadow: "none",

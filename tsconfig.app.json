@@ -18,7 +18,6 @@
     "jsx": "react-jsx",
 
     "strict": true,
-    "forceConsistentCasingInFileNames": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
@@ -27,6 +26,11 @@
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true
   },
-  "include": ["src", "src/types/**/*.d.ts"],
-  "exclude": ["src/**/*.test.ts", "src/**/*.test.tsx", "src/tests"]
+  "include": [
+    "src",
+    "src/types/**/*.d.ts",
+    "src/**/*.test.ts",
+    "jest.config.js"
+  ],
+  "exclude": ["src/**/*.test.tsx", "src/tests"]
 }

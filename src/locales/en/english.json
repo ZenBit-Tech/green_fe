@@ -82,6 +82,7 @@
     "preTitle": "Start your analysis now",
     "title": "Upload Your Blood Test Results",
     "description": "Upload your blood test report and get personalized health insights. Our analyzer will extract key markers, highlight any concerns, and provide tailored recommendations based on your results.",
+    "descriptionMobile": "Upload your blood test to get personalized insights. The analyzer detects key markers and gives tailored recommendations.",
     "drop": "Drop your your document here",
     "click": "or click to browse files",
     "supports": "Supports PDF, JPG, PNG files up to 10MB",
@@ -131,7 +132,7 @@
     "and": " and ",
     "privacy": "Privacy Policy",
     "emailSentSuccess": "A sign-in link has been sent to your email!",
-    "errorInvalidEmail": "Invalid email format. Please enter the correct email.",
+    "errorInvalidEmail": "Please enter the correct email.",
     "errorFromServer": "An error occurred: {{message}}",
     "errorNetwork": "Please check your connection and try again."
   },
@@ -154,7 +155,10 @@
     "title": "About Lab AI",
     "description": "We're on a mission to democratize healthcare by making blood test analysis accessible, understandable, and actionable for everyone",
     "caption": "Our Story",
-    "text": "Founded in 2023 by a team of healthcare professionals, data scientists, and AI researchers, PlasmAI was born from a simple observation: most people struggle to understand their blood test results. We saw patients leaving doctor's offices with complex lab reports, feeling confused and uncertain about their health status. Traditional healthcare systems often lack the time to provide detailed explanations, leaving patients to navigate their health journey alone. \nOur AI-powered platform bridges this gap, transforming complex medical data into clear, actionable insights that empower individuals to take control of their health.",
+    "line1": "Founded in 2023 by a team of healthcare professionals, data scientists, and AI researchers, PlasmAI was born from a simple observation: most people struggle to understand their blood test results.",
+    "line2": "We saw patients leaving doctor's offices with complex lab reports, feeling confused and uncertain about their health status. ",
+    "line3": "Traditional healthcare systems often lack the time to provide detailed explanations, leaving patients to navigate their health journey alone.",
+    "line4": "Our AI-powered platform bridges this gap, transforming complex medical data into clear, actionable insights that empower individuals to take control of their health.",
     "name1": "Our Mission",
     "name2": "Privacy First",
     "name3": "Scientific Accuracy",
@@ -162,7 +166,8 @@
     "text1": "To make healthcare more accessible and understandable by providing AI-powered insights that help people make informed decisions about their health and wellbeing.",
     "text2": "Your health data is sacred. We use enterprise-grade encryption and never share your personal information with third parties.",
     "text3": "Our AI models are trained on peer-reviewed medical literature and validated by healthcare professionals to ensure accuracy.",
-    "text4": "Healthcare insights shouldn't be limited by geography or economics. We're making advanced health analysis available to everyone."
+    "text4": "Healthcare insights shouldn't be limited by geography or economics. We're making advanced health analysis available to everyone.",
+    "error": "Animation failed to load. Please try again later."
   },
   "steps": {
     "upload": "Upload",
@@ -272,6 +277,7 @@
   },
   "options": {
     "title": "What would you like to add to your blood test result interpretation?",
+    "mobileTitle": "What would you like to add to your results?",
     "subtitle": "Select the types of recommendations you would like to receive with your analysis",
     "supplement": {
       "title": "Supplement Recommendations",
@@ -368,5 +374,37 @@
     "email_invalid": "Please enter a valid email address",
     "message_required": "Message is required",
     "message_min_length": "Message must be at least 10 characters"
+  },
+  "result": {
+    "title": "Blood Test Results Decoded by AI",
+    "subtitle": "Complete analysis with personalized recommendations",
+    "warningText": "Lab AI is not responsible for using these results without medical advice. Please consult your doctor before making any health-related decisions.",
+    "normal": "Normal indicator",
+    "limit": "Borderline indicator",
+    "abnormal": "Abnormal indicator",
+    "markerLabel": "Marker",
+    "valueLabel": "Value",
+    "normalLabel": "Normal Range",
+    "recomendLabel": "Interpretation",
+    "answerToQuestion": "Answer to your question:",
+    "supplement": "Supplement Recommendations",
+    "nutrition": "Nutrition Recommendations",
+    "exercise": "Exercise Recommendations",
+    "drug": "Drug Recommendations",
+    "recommendDisclaimer": "This result was generated using artificial intelligence and is not a medical diagnosis. We recommend consulting a doctor to confirm the interpretation and receive professional advice!",
+    "medicalAssessment": "Medical Assessment & Recommendations",
+    "overallHealthTitle": "<strong>Overall Health Assessment:</strong> ",
+    "summaryTitle": "<strong>Recommendation Summary: </strong>",
+    "disclaimer": "Please note that this result was generated by AI, not a qualified medical professional. Always consult a doctor before taking any medication. Take care of yourself and your health.",
+    "downloadPDF": "Download PDF",
+    "printResult": "Print Result",
+    "startNew": "Start New Analysis",
+    "titlePDF": "Blood Test Analysis Report",
+    "warningTextPDF": "Lab AI is not responsible for using these results without medical advice. ",
+    "overallHealthTitlePDF": "Overall Health Assessment: ",
+    "datePDF": "Date: ",
+    "agePDF": "Age: ",
+    "genderPDF": "Gender: ",
+    "summaryTitlePDF": "Recommendation Summary: "
   }
 }
